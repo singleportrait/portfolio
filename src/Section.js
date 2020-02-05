@@ -1,10 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import {
   maxImageWidth,
   columnBreakpoint, slideshowBreakpoint,
   fingerWidth,
   mediumScreenSlideshowMargins, smallScreenMargins,
+  ifNarrowerThan,
 } from './Styles';
 // import * as styles from './Variables';
 
@@ -14,39 +15,49 @@ export const Section = styled.section`
   margin: 0 auto;
   justify-content: space-between;
   position: relative;
+
   ${props => props.slideshow && `
     overflow: hidden;
     max-width: none;
   `}
 
-  @media screen and (max-width: ${slideshowBreakpoint}) {
-    margin: 0 ${mediumScreenSlideshowMargins};
+  ${props => props.header && `
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+  `}
+
+  ${ifNarrowerThan(slideshowBreakpoint)} {
+    ${props => !props.slideshow && `margin: 0 ${mediumScreenSlideshowMargins}`};
+
+    ${props => props.header && "margin-top: 1rem;"}
   }
 
-  @media screen and (max-width: ${columnBreakpoint}) {
-    margin: 0 ${smallScreenMargins};
+  ${ifNarrowerThan(columnBreakpoint)} {
+    ${props => !props.slideshow && `margin: 0 ${smallScreenMargins}`};
+
     ${props => props.text && "flex-direction: column;"}
-  }
 
+    ${props => props.header && "margin-top: 1rem;"}
+  }
 `
 
 export const SectionColumn = styled.div`
   position: relative;
   width: ${props => props.text ? "calc(50% - 2rem)" : "50%"};
 
-  @media screen and (max-width: ${columnBreakpoint}) {
+  ${ifNarrowerThan(columnBreakpoint)} {
     width: ${props => props.text ? `calc(100vw - ${fingerWidth})` : "auto"};
   }
 `
 
 export const SectionColumnLastParagraph = styled.p`
-  @media screen and (max-width: ${columnBreakpoint}) {
+  ${ifNarrowerThan(columnBreakpoint)} {
     margin-bottom: 0;
   }
 `;
 
 export const SectionColumnFirstParagraph = styled.p`
-  @media screen and (max-width: ${columnBreakpoint}) {
+  ${ifNarrowerThan(columnBreakpoint)} {
     margin-top: 0;
   }
 `;

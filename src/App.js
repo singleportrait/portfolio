@@ -26,6 +26,19 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>
+      <Section header>
+        <MediaQuery minWidth={columnBreakpoint}>
+          <SectionColumn />
+        </MediaQuery>
+        <SectionColumn text>
+          <p>I am currently freelancing.</p>
+
+          <p>
+            Contact me at...
+          </p>
+        </SectionColumn>
+      </Section>
+
     </div>
   );
 }

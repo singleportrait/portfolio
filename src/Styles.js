@@ -17,3 +17,7 @@ export const link_color = "#d04d00";
 
 export const gradientStartColor = "#fdefbd";
 export const gradientEndColor = "#fbbf9c";
+
+export const ifNarrowerThan = (breakpoint) => {
+  return `@media screen and (max-width: ${breakpoint})`;
+}
