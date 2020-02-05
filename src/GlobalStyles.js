@@ -3,7 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 import {
   slideshowBreakpoint, columnBreakpoint, fingerWidth,
   gradientStartColor, gradientEndColor,
-} from './Variables';
+} from './Styles';
 
 export const GlobalStyles = createGlobalStyle`
   html {

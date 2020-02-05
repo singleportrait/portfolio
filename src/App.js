@@ -1,23 +1,28 @@
 import React from 'react';
+import MediaQuery from 'react-responsive'
+
 import logo from './logo.svg';
 
 import { GlobalStyles } from './GlobalStyles';
+import { Section, SectionColumn } from './Section';
+import Slideshow from './Slideshow';
 
-import {
-  Section, SectionColumn,
-} from './Styles';
+import { columnBreakpoint } from './Styles';
 
 function App() {
   return (
     <div className="App">
       <GlobalStyles />
       <Section>
-        <SectionColumn wideScreensOnly />
-        <SectionColumn text={true}>
+        <MediaQuery minWidth={columnBreakpoint}>
+          <SectionColumn />
+        </MediaQuery>
+        <SectionColumn text>
           <h1>Jenn Scheer</h1>
           <p>I am a product designer &amp; developer in NYC.</p>
         </SectionColumn>
       </Section>
+      <Slideshow />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>

@@ -1,36 +1,19 @@
-import styled from 'styled-components';
+export const maxImageWidth = "850px";
 
-import {
-  maxImageWidth,
-  columnBreakpoint, slideshowBreakpoint,
-  fingerWidth,
-  mediumScreenSlideshowMargins, smallScreenMargins,
-} from './Variables';
-// import * as styles from './Variables';
+export const slideshowBreakpoint = "900px";
+export const columnBreakpoint = "550px";
 
-export const Section = styled.section`
-  display: flex;
-  max-width: ${maxImageWidth};
-  margin: 0 auto;
-  justify-content: space-between;
-  position: relative;
+export const fingerWidth = "44px";
+export const smallScreenMargins = "1.4rem";
 
-  @media screen and (max-width: ${slideshowBreakpoint}) {
-    margin: 0 ${mediumScreenSlideshowMargins};
-  }
+export const mediumScreenImageWidth = "90vw";
+export const mediumScreenSlideshowMargins = `calc((100vw - ${mediumScreenImageWidth}) / 2)`;
 
-  @media screen and (max-width: ${columnBreakpoint}) {
-    margin: 0 ${smallScreenMargins};
-  }
+export const smallScreenImageWidth = "98vw";
+export const smallScreenSlideshowMargins = `calc((100vw - ${smallScreenImageWidth}) / 2)`;
 
-`
+export const primary_color = "#fbc4a0";
+export const link_color = "#d04d00";
 
-export const SectionColumn = styled.div`
-  position: relative;
-  width: ${props => props.text ? "calc(50% - 2rem)" : "50%"};
-
-  @media screen and (max-width: ${columnBreakpoint}) {
-    width: ${props => props.text ? `calc(100vw - ${fingerWidth})` : "auto"};
-    ${props => props.wideScreensOnly && "display: none;"}
-  }
-`
+export const gradientStartColor = "#fdefbd";
+export const gradientEndColor = "#fbbf9c";
