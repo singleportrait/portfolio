@@ -1,23 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+
+import { GlobalStyles } from './GlobalStyles';
+
+import {
+  Section, SectionColumn,
+} from './Styles';
 
 function App() {
   return (
     <div className="App">
+      <GlobalStyles />
+      <Section>
+        <SectionColumn wideScreensOnly />
+        <SectionColumn text={true}>
+          <h1>Jenn Scheer</h1>
+          <p>I am a product designer &amp; developer in NYC.</p>
+        </SectionColumn>
+      </Section>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
