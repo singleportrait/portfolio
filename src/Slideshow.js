@@ -11,11 +11,33 @@ import {
 
 import {
   columnBreakpoint, slideshowBreakpoint,
+  smallScreenMargins,
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
+  primaryColor, fingerWidth,
 } from './Styles';
 
 class Slideshow extends Component {
+
+  goToSlide = (i) => {
+    console.log("Going to slide", i);
+  }
+
+  goToPreviousSlide() {
+    console.log("Going to previous slide");
+  }
+
+  goToNextSlide() {
+    console.log("Going to next slide");
+  }
+
   render() {
+
+    const renderArrowSVG = (previous = false) => {
+      return (
+        <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
+      );
+    }
+
     return (
       <React.Fragment>
         <Section header>
@@ -35,7 +57,21 @@ class Slideshow extends Component {
 
         <Section>
           <SectionColumn>
-            Buttons
+            <SlideList>
+              { [1,2,3].map((button, i) =>
+              <SlideListItem key={i} selected={i === 0} onClick={() => this.goToSlide(i)} />
+              )}
+            </SlideList>
+          </SectionColumn>
+          <SectionColumn text previousNext>
+            <PreviousButton onClick={this.goToPreviousSlide}>
+              <span>Previous</span>
+              { renderArrowSVG(true) }
+            </PreviousButton>
+            <NextButton onClick={this.goToNextSlide}>
+              <span>Next</span>
+              { renderArrowSVG() }
+            </NextButton>
           </SectionColumn>
         </Section>
 
@@ -106,6 +142,85 @@ const SlideImage = styled.img`
 
   @media screen and (max-width: ${columnBreakpoint}) {
     max-width: ${smallScreenImageWidth};
+  }
+`;
+
+const SlideList = styled.ol`
+  counter-reset: section;
+  list-style-type: none;
+`;
+
+const SlideListItem = styled.li`
+  display: block;
+  float: left;
+  padding: 1rem .5rem;
+  cursor: pointer;
+  color: ${props => props.selected ? "black" : "white"};
+  font-weight: 600;
+  font-size: 1.3rem;
+
+  &:first-child {
+    margin-left: -.5rem;
+  }
+
+  &:before {
+    counter-increment: section;
+    content: counter(section);
+  }
+`;
+
+const sharedPreviousNextStyles = `
+  cursor: pointer;
+  user-select: none;
+  font-size: 1.3rem;
+  letter-spacing: .3rem;
+  text-transform: uppercase;
+  padding: 1rem;
+
+  &:hover {
+    color: #666;
+
+    svg path {
+      stroke: ${primaryColor};
+    }
+  }
+
+  @media screen and (max-width: ${columnBreakpoint}) {
+    width: ${fingerWidth};
+    height: ${fingerWidth};
+
+    span {
+      display: none;
+    }
+  }
+`;
+
+const PreviousButton = styled.div`
+  ${sharedPreviousNextStyles}
+
+  font-weight: 400;
+  margin-left: -1rem;
+  color: ${primaryColor};
+`;
+
+const NextButton = styled.div`
+  ${sharedPreviousNextStyles}
+
+  font-weight: 600;
+  margin-right: -1rem;
+
+  @media screen and (max-width: ${columnBreakpoint}) {
+    margin-right: -${smallScreenMargins};
+  }
+`;
+
+const Arrow = styled.svg`
+  display: none;
+
+  ${props => props.previous && "transform: rotate(180deg)"};
+
+  @media screen and (max-width: ${columnBreakpoint}) {
+    display: block;
   }
 `;
 
