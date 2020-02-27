@@ -44,14 +44,20 @@ export const Section = styled.section`
 export const SectionColumn = styled.div`
   position: relative;
   width: ${props => props.text ? "calc(50% - 2rem)" : "50%"};
-  ${props => props.previousNext && "display: flex;"};
-  ${props => props.previousNext && "justify-content: space-between;"};
 
   ${ifNarrowerThan(columnBreakpoint)} {
-    width: ${props => props.text && !props.previousNext ? `calc(100vw - ${fingerWidth})` : "auto"};
-    ${props => props.previousNext && "justify-content: flex-end;" };
+    width: ${props => props.text ? `calc(100% - ${fingerWidth})` : "auto"};
   }
 `
+
+export const NextPreviousSectionColumn = styled(SectionColumn)`
+  display: flex;
+  justify-content: space-between;
+
+  ${ifNarrowerThan(columnBreakpoint)} {
+    width: auto;
+    justify-content: flex-end;
+`;
 
 export const SectionColumnLastParagraph = styled.p`
   ${ifNarrowerThan(columnBreakpoint)} {

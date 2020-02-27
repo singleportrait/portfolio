@@ -7,19 +7,24 @@ import geniusImage from './images/genius-homepage-after-matches-video.png';
 import {
   Section, SectionColumn,
   SectionColumnLastParagraph, SectionColumnFirstParagraph,
+  NextPreviousSectionColumn,
 } from './Section';
 
 import {
   columnBreakpoint, slideshowBreakpoint,
   smallScreenMargins,
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
-  primaryColor, fingerWidth,
+  primaryColor, linkColor, fingerWidth,
 } from './Styles';
 
 class Slideshow extends Component {
 
   goToSlide = (i) => {
     console.log("Going to slide", i);
+  }
+
+  goToSlideByName = (name) => {
+    console.log("Going to slide", name);
   }
 
   goToPreviousSlide() {
@@ -38,6 +43,46 @@ class Slideshow extends Component {
       );
     }
 
+    const geniusFirstColumn = () => {
+      return (
+        <React.Fragment>
+          I was recently at&nbsp;
+          <ExternalLink href="http://genius.com/">Genius</ExternalLink>
+          , a crowdsourced lyrics site, annotation platform, and all-around music + tech company, from 2014 &ndash; 2017. While there I led our design team, both from the product &amp; branding sides. Over the course of a few years we rebranded from "Rap Genius" to "Genius", built a revolutionary&nbsp;
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-web-annotator')}
+            selected
+          >web annotation platform</TextLink>,
+          redesigned all of the core pieces of our site (including
+        </React.Fragment>
+      );
+    }
+
+    const geniusSecondColumn = () => {
+      return (
+        <React.Fragment>
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-song-after')}
+          >song/lyric pages</TextLink>,&nbsp;
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-artist-after')}
+          >artist &amp; user pages</TextLink>,&nbsp;
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-homepage-after')}
+          >homepage</TextLink>,&nbsp;
+          and&nbsp;
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-article-after')}
+          >articles</TextLink>&nbsp;
+          &mdash; on web and apps) as well as built out our&nbsp;
+          <TextLink
+            onClick={() => this.goToSlideByName('genius-marketing')}
+          >marketing design department</TextLink>&nbsp;
+          from the ground up. I worked across the team &amp; company to make sure everyone was satisfied and happy, and continually pushed us forward to stay up with the best design &amp; user interface standards.
+        </React.Fragment>
+      );
+    }
+
     return (
       <React.Fragment>
         <Section header>
@@ -46,6 +91,9 @@ class Slideshow extends Component {
 
         <Section slideshow>
           <Slides>
+            <Slide>
+              <SlideImage src={geniusImage} alt="Here is some alt text." />
+            </Slide>
             <Slide>
               <SlideImage src={geniusImage} alt="Here is some alt text." />
             </Slide>
@@ -63,7 +111,7 @@ class Slideshow extends Component {
               )}
             </SlideList>
           </SectionColumn>
-          <SectionColumn text previousNext>
+          <NextPreviousSectionColumn text>
             <PreviousButton onClick={this.goToPreviousSlide}>
               <span>Previous</span>
               { renderArrowSVG(true) }
@@ -72,14 +120,14 @@ class Slideshow extends Component {
               <span>Next</span>
               { renderArrowSVG() }
             </NextButton>
-          </SectionColumn>
+          </NextPreviousSectionColumn>
         </Section>
 
         <Section text>
           <SectionColumn text>
             <p>Head of Design @ Genius</p>
             <SectionColumnLastParagraph>
-              Description...
+              { geniusFirstColumn() }
             </SectionColumnLastParagraph>
           </SectionColumn>
           <SectionColumn text>
@@ -87,7 +135,7 @@ class Slideshow extends Component {
               <p>&nbsp;</p>
             </MediaQuery>
             <SectionColumnFirstParagraph>
-              ... continued text.
+              { geniusSecondColumn() }
             </SectionColumnFirstParagraph>
           </SectionColumn>
         </Section>
@@ -222,6 +270,21 @@ const Arrow = styled.svg`
   @media screen and (max-width: ${columnBreakpoint}) {
     display: block;
   }
+`;
+
+const TextLink = styled.span`
+  pointer-events: none;
+
+  @media screen and (min-width: ${columnBreakpoint}) {
+    text-decoration: underline;
+    pointer-events: all;
+    cursor: ${props => props.selected ? "default" : "pointer"};
+    ${props => props.selected && `color: ${linkColor}`};
+  }
+`;
+
+const ExternalLink = styled.a`
+  white-space: nowrap;
 `;
 
 export default Slideshow;
