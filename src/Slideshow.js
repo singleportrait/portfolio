@@ -144,12 +144,9 @@ export default function Slideshow(props) {
   const aidinFirstColumn = () => {
     return (
       <React.Fragment>
-        <p>
         Over 6 months, I worked with Aidin, an NYC-based healthcare company, to redesign and bring product thinking to their app. Aidin helps ease patient care transitions (say, moving from a hospital to a nursing home) by bringing quality data to the moment when patients choose where they want to receive their care.
-        </p>
-        <p>
-          Together we rebuilt Aidin from the ground up, rethinking how referrals are sent, received, and managed, as well as
-        </p>
+        <br /><br />
+        Together we rebuilt Aidin from the ground up, rethinking how referrals are sent, received, and managed, as well as
       </React.Fragment>
     );
   }
@@ -157,12 +154,9 @@ export default function Slideshow(props) {
   const aidinSecondColumn = () => {
     return (
       <React.Fragment>
-        <p>
-          exploring their future-forward business goals. Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive user testing, interviewing, and demoing of our proposed solutions as we progressed.
-        </p>
-        <p>
-          I’m continuing to work with them through development, providing project management, design consultation, code review, and QA testing as the project moves into reality.
-        </p>
+        exploring their future-forward business goals. Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive user testing, interviewing, and demoing of our proposed solutions as we progressed.
+        <br /><br />
+        I’m continuing to work with them through development, providing project management, design consultation, code review, and QA testing as the project moves into reality.
       </React.Fragment>
     );
   }
