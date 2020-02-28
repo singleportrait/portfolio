@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import MediaQuery from 'react-responsive'
+import MediaQuery from 'react-responsive';
+import Hammer from 'react-hammerjs';
 
 import SlideshowArrowIcon from './SlideshowArrowIcon';
 import ExternalLinkIcon from './ExternalLinkIcon';
@@ -75,6 +76,17 @@ export default function Slideshow(props) {
     }
 
     setCurrentSlide(newSlide);
+  }
+
+  // Swipe handlers for switching slides
+  // I wanted to use react-swipeable, but neither the hooks nor the
+  // component were letting me swipe more than once, or at all
+  function handleSwipe(e) {
+    if (e.direction === 2) { // Swiping left
+      goToNextSlide();
+    } else if (e.direction === 4) { // Swiping right
+      goToPreviousSlide();
+    }
   }
 
   // A breaking space, to put between elements within the text
@@ -267,24 +279,33 @@ export default function Slideshow(props) {
       </Section>
 
       <Section slideshow>
-        <Slides
-          style={{left: currentSlide * -100 + "%"}}
-          endcapAnimation={endcapAnimation}
-        >
-          { props.collection.slides.map((slide, i) =>
-            <Slide key={i}>
-              { slide.type === 'image' &&
-                <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
-              }
-              { slide.type === 'video' &&
-                <div>
-                  <SlideVideo as="video" src={slide.videoSrc} autoPlay muted playsInline loop />
-                  <SlideImagePlaceholder src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
-                </div>
-              }
-            </Slide>
-          )}
-        </Slides>
+        <Hammer onSwipe={handleSwipe}>
+          <Slides
+            style={{left: currentSlide * -100 + "%"}}
+            endcapAnimation={endcapAnimation}
+          >
+            { props.collection.slides.map((slide, i) =>
+              <Slide key={i}>
+                { slide.type === 'image' &&
+                  <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+                }
+                { slide.type === 'video' &&
+                  <div>
+                    <SlideVideo
+                      as="video"
+                      src={slide.videoSrc}
+                      autoPlay
+                      muted
+                      playsInline
+                      loop
+                    />
+                    <SlideImagePlaceholder src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+                  </div>
+                }
+              </Slide>
+            )}
+          </Slides>
+        </Hammer>
       </Section>
 
       <Section>
