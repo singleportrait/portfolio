@@ -1,8 +1,6 @@
 import React from 'react';
 import MediaQuery from 'react-responsive'
 
-import logo from './logo.svg';
-
 import { GlobalStyles } from './GlobalStyles';
 import { Section, SectionColumn } from './SectionStyles';
 import Slideshow from './Slideshow';
@@ -23,7 +21,7 @@ function App() {
         <MediaQuery minWidth={columnBreakpoint}>
           <SectionColumn />
         </MediaQuery>
-        <SectionColumn text>
+        <SectionColumn text intro>
           <h1>Jenn Scheer</h1>
           <p>I am a product designer &amp; developer in NYC.</p>
         </SectionColumn>
@@ -32,9 +30,6 @@ function App() {
       <Slideshow collection={getCollection("genius")} />
       <Slideshow collection={getCollection("freelance")} />
       <Slideshow collection={getCollection("refinery29")} />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
       <Section header>
         <MediaQuery minWidth={columnBreakpoint}>
           <SectionColumn />

@@ -44,6 +44,8 @@ export const SectionColumn = styled.div`
   position: relative;
   width: ${props => props.text ? "calc(50% - 2rem)" : "50%"};
 
+  ${props => props.intro && "margin-bottom: 1rem;"}
+
   ${ifNarrowerThan(columnBreakpoint)} {
     width: ${props => props.text ? `calc(100% - ${fingerWidth})` : "auto"};
   }
