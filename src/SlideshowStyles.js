@@ -5,6 +5,7 @@ import {
   smallScreenMargins,
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
   primaryColor, linkColor, fingerWidth,
+  mediumScreenSlideshowMargins, smallScreenSlideshowMargins,
 } from './Styles';
 
 const imageRatio = '.695555556';
@@ -54,6 +55,33 @@ export const SlideImage = styled.img`
   @media screen and (max-width: ${columnBreakpoint}) {
     max-width: ${smallScreenImageWidth};
   }
+`;
+
+const sharedSlideVideoImageStyles = `
+  position: absolute;
+  left: calc((99vw - ${maxImageWidth}) / 2);
+
+  @media screen and (max-width: ${slideshowBreakpoint}) {
+    left: ${mediumScreenSlideshowMargins};
+  }
+
+  @media screen and (max-width: ${columnBreakpoint}) {
+    left: ${smallScreenSlideshowMargins};
+  }
+`;
+
+export const SlideVideo = styled(SlideImage)`
+  ${sharedSlideVideoImageStyles}
+
+  top: ${(40 / 626) * 100 + "%"}; // Percentage down from top of browser frame
+  z-index: 1;
+`;
+
+export const SlideImagePlaceholder = styled(SlideImage)`
+  ${sharedSlideVideoImageStyles}
+
+  top: 0;
+  z-index: 0;
 `;
 
 export const SlideList = styled.ol`

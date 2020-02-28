@@ -12,6 +12,7 @@ import {
 
 import {
   Slides, Slide, SlideImage,
+  SlideVideo, SlideImagePlaceholder,
   SlideList, SlideListItem,
   PreviousButton, NextButton,
   TextLink, ExternalLink
@@ -278,7 +279,15 @@ export default function Slideshow(props) {
         >
           { props.collection.slides.map((slide, i) =>
             <Slide key={i}>
-              <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+              { slide.type === 'image' &&
+                <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+              }
+              { slide.type === 'video' &&
+                <div>
+                  <SlideVideo as="video" src={slide.videoSrc} autoPlay muted playsInline loop />
+                  <SlideImagePlaceholder src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+                </div>
+              }
             </Slide>
           )}
         </Slides>
