@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import MediaQuery from 'react-responsive'
-import styled from 'styled-components/macro';
+
+import SlideshowArrowIcon from './SlideshowArrowIcon';
+import ExternalLinkIcon from './ExternalLinkIcon';
 
 import {
   Section, SectionColumn,
@@ -72,18 +74,15 @@ export default function Slideshow(props) {
     setCurrentSlide(newSlide);
   }
 
-  const renderArrowSVG = (previous = null) => {
-    return (
-      <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={!!previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
-    );
-  }
-
   // Manually-coded text to include links to individual slides
   const geniusFirstColumn = () => {
     return (
       <React.Fragment>
         I was recently at&nbsp;
-        <ExternalLink href="http://genius.com/">Genius</ExternalLink>
+        <ExternalLink href="http://genius.com/">
+          Genius
+          <ExternalLinkIcon />
+        </ExternalLink>
         , a crowdsourced lyrics site, annotation platform, and all-around music + tech company, from 2014 &ndash; 2017. While there I led our design team, both from the product &amp; branding sides. Over the course of a few years we rebranded from "Rap Genius" to "Genius", built a revolutionary&nbsp;
         <TextLink
           onClick={() => goToSlideByName('genius-web-annotator')}
@@ -158,11 +157,11 @@ export default function Slideshow(props) {
         <NextPreviousSectionColumn text>
           <PreviousButton onClick={goToPreviousSlide}>
             <span>Previous</span>
-            { renderArrowSVG("previous") }
+            <SlideshowArrowIcon previous />
           </PreviousButton>
           <NextButton onClick={goToNextSlide}>
             <span>Next</span>
-            { renderArrowSVG() }
+            <SlideshowArrowIcon />
           </NextButton>
         </NextPreviousSectionColumn>
       </Section>
