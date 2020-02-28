@@ -28,7 +28,10 @@ function App() {
           <p>I am a product designer &amp; developer in NYC.</p>
         </SectionColumn>
       </Section>
+      <Slideshow collection={getCollection("aidin")} />
       <Slideshow collection={getCollection("genius")} />
+      <Slideshow collection={getCollection("freelance")} />
+      <Slideshow collection={getCollection("refinery29")} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>

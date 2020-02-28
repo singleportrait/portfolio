@@ -137,7 +137,7 @@ export default function Slideshow(props) {
         >
           { props.collection.slides.map((slide, i) =>
             <Slide key={i}>
-              <SlideImage src={slide.src} alt="Here is some alt text." />
+              <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
             </Slide>
           )}
         </Slides>
