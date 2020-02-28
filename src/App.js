@@ -7,9 +7,15 @@ import { GlobalStyles } from './GlobalStyles';
 import { Section, SectionColumn } from './Section';
 import Slideshow from './Slideshow';
 
+import { SLIDES } from './slidesData';
+
 import { columnBreakpoint } from './Styles';
 
 function App() {
+  const getCollection = (collectionKey) => {
+    return SLIDES.find(collection => collection.key === collectionKey);
+  }
+
   return (
     <div className="App">
       <GlobalStyles />
@@ -22,7 +28,7 @@ function App() {
           <p>I am a product designer &amp; developer in NYC.</p>
         </SectionColumn>
       </Section>
-      <Slideshow />
+      <Slideshow collection={getCollection("genius")} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
       </header>

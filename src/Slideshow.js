@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import MediaQuery from 'react-responsive'
 import styled from 'styled-components/macro';
-
-import geniusImage from './images/genius-homepage-after-matches-video.png';
 
 import {
   Section, SectionColumn,
@@ -17,132 +15,176 @@ import {
   primaryColor, linkColor, fingerWidth,
 } from './Styles';
 
-class Slideshow extends Component {
+export default function Slideshow(props) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [endcapAnimation, setEndcapAnimation] = useState(false);
 
-  goToSlide = (i) => {
+  /* Set the endcap animation back to false any time it gets set to true.
+   * When going from slides 7-8, for instance, if we rely on the new slide
+   * number to show the animation, then it will run that special endcap
+   * transition immediately, when we want the endcap one only *after* the
+   * transition is complete.
+   *
+   * Instead, we rely on this state being set to 'true' to show the animation,
+   * but then re-set the transition to the regular one after the transition is
+   * complete (.7s);
+   */
+  useEffect(() => {
+    console.log("Endcap transition running");
+    setTimeout(setEndcapAnimation(false), 700);
+  }, [endcapAnimation]);
+
+  function goToSlide(i) {
     console.log("Going to slide", i);
+
+    setCurrentSlide(i);
   }
 
-  goToSlideByName = (name) => {
+  function goToSlideByName(name) {
     console.log("Going to slide", name);
+
+    const newSlideIndex = props.collection.slides.findIndex(slide => slide.name === name);
+
+    setCurrentSlide(newSlideIndex);
   }
 
-  goToPreviousSlide() {
+  function goToPreviousSlide() {
     console.log("Going to previous slide");
+
+    let newSlide = currentSlide - 1;
+    if (newSlide < 0) {
+      newSlide = props.collection.slides.length - 1;
+      setEndcapAnimation(true);
+    }
+
+    setCurrentSlide(newSlide);
   }
 
-  goToNextSlide() {
+  function goToNextSlide() {
     console.log("Going to next slide");
+
+    let newSlide = currentSlide + 1;
+    if (newSlide >= props.collection.slides.length) {
+      newSlide = 0;
+      setEndcapAnimation(true);
+    }
+
+    setCurrentSlide(newSlide);
   }
 
-  render() {
+  const renderArrowSVG = (previous = false) => {
+    return (
+      <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
+    );
+  }
 
-    const renderArrowSVG = (previous = false) => {
-      return (
-        <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
-      );
-    }
-
-    const geniusFirstColumn = () => {
-      return (
-        <React.Fragment>
-          I was recently at&nbsp;
-          <ExternalLink href="http://genius.com/">Genius</ExternalLink>
-          , a crowdsourced lyrics site, annotation platform, and all-around music + tech company, from 2014 &ndash; 2017. While there I led our design team, both from the product &amp; branding sides. Over the course of a few years we rebranded from "Rap Genius" to "Genius", built a revolutionary&nbsp;
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-web-annotator')}
-            selected
-          >web annotation platform</TextLink>,
-          redesigned all of the core pieces of our site (including
-        </React.Fragment>
-      );
-    }
-
-    const geniusSecondColumn = () => {
-      return (
-        <React.Fragment>
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-song-after')}
-          >song/lyric pages</TextLink>,&nbsp;
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-artist-after')}
-          >artist &amp; user pages</TextLink>,&nbsp;
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-homepage-after')}
-          >homepage</TextLink>,&nbsp;
-          and&nbsp;
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-article-after')}
-          >articles</TextLink>&nbsp;
-          &mdash; on web and apps) as well as built out our&nbsp;
-          <TextLink
-            onClick={() => this.goToSlideByName('genius-marketing')}
-          >marketing design department</TextLink>&nbsp;
-          from the ground up. I worked across the team &amp; company to make sure everyone was satisfied and happy, and continually pushed us forward to stay up with the best design &amp; user interface standards.
-        </React.Fragment>
-      );
-    }
-
+  // Manually-coded text to include links to individual slides
+  const geniusFirstColumn = () => {
     return (
       <React.Fragment>
-        <Section header>
-          <h2>Title</h2>
-        </Section>
-
-        <Section slideshow>
-          <Slides>
-            <Slide>
-              <SlideImage src={geniusImage} alt="Here is some alt text." />
-            </Slide>
-            <Slide>
-              <SlideImage src={geniusImage} alt="Here is some alt text." />
-            </Slide>
-            <Slide>
-              <SlideImage src={geniusImage} alt="Here is some alt text." />
-            </Slide>
-          </Slides>
-        </Section>
-
-        <Section>
-          <SectionColumn>
-            <SlideList>
-              { [1,2,3].map((button, i) =>
-              <SlideListItem key={i} selected={i === 0} onClick={() => this.goToSlide(i)} />
-              )}
-            </SlideList>
-          </SectionColumn>
-          <NextPreviousSectionColumn text>
-            <PreviousButton onClick={this.goToPreviousSlide}>
-              <span>Previous</span>
-              { renderArrowSVG(true) }
-            </PreviousButton>
-            <NextButton onClick={this.goToNextSlide}>
-              <span>Next</span>
-              { renderArrowSVG() }
-            </NextButton>
-          </NextPreviousSectionColumn>
-        </Section>
-
-        <Section text>
-          <SectionColumn text>
-            <p>Head of Design @ Genius</p>
-            <SectionColumnLastParagraph>
-              { geniusFirstColumn() }
-            </SectionColumnLastParagraph>
-          </SectionColumn>
-          <SectionColumn text>
-            <MediaQuery minWidth={columnBreakpoint}>
-              <p>&nbsp;</p>
-            </MediaQuery>
-            <SectionColumnFirstParagraph>
-              { geniusSecondColumn() }
-            </SectionColumnFirstParagraph>
-          </SectionColumn>
-        </Section>
-
+        I was recently at&nbsp;
+        <ExternalLink href="http://genius.com/">Genius</ExternalLink>
+        , a crowdsourced lyrics site, annotation platform, and all-around music + tech company, from 2014 &ndash; 2017. While there I led our design team, both from the product &amp; branding sides. Over the course of a few years we rebranded from "Rap Genius" to "Genius", built a revolutionary&nbsp;
+        <TextLink
+          onClick={() => goToSlideByName('genius-web-annotator')}
+          selected={props.collection.slides[currentSlide].name === 'genius-web-annotator'}
+        >web annotation platform</TextLink>,
+        redesigned all of the core pieces of our site (including
       </React.Fragment>
     );
   }
+
+  const geniusSecondColumn = () => {
+    return (
+      <React.Fragment>
+        <TextLink
+          onClick={() => goToSlideByName('genius-song-after')}
+          selected={props.collection.slides[currentSlide].name === 'genius-song-after'}
+        >song/lyric pages</TextLink>,&nbsp;
+        <TextLink
+          onClick={() => goToSlideByName('genius-artist-after')}
+          selected={props.collection.slides[currentSlide].name === 'genius-artist-after'}
+        >artist &amp; user pages</TextLink>,&nbsp;
+        <TextLink
+          onClick={() => goToSlideByName('genius-homepage-after')}
+          selected={props.collection.slides[currentSlide].name === 'genius-homepage-after'}
+        >homepage</TextLink>,&nbsp;
+        and&nbsp;
+        <TextLink
+          onClick={() => goToSlideByName('genius-article-after')}
+          selected={props.collection.slides[currentSlide].name === 'genius-article-after'}
+        >articles</TextLink>&nbsp;
+        &mdash; on web and apps) as well as built out our&nbsp;
+        <TextLink
+          onClick={() => goToSlideByName('genius-marketing')}
+          selected={props.collection.slides[currentSlide].name === 'genius-marketing'}
+        >marketing design department</TextLink>&nbsp;
+        from the ground up. I worked across the team &amp; company to make sure everyone was satisfied and happy, and continually pushed us forward to stay up with the best design &amp; user interface standards.
+      </React.Fragment>
+    );
+  }
+
+  return (
+    <React.Fragment>
+      <Section header>
+        <h2>{ props.collection.title }</h2>
+      </Section>
+
+      <Section slideshow>
+        <Slides
+          style={{left: currentSlide * -100 + "%"}}
+          endcapAnimation={endcapAnimation}
+        >
+          { props.collection.slides.map((slide, i) =>
+            <Slide key={i}>
+              <SlideImage src={slide.src} alt="Here is some alt text." />
+            </Slide>
+          )}
+        </Slides>
+      </Section>
+
+      <Section>
+        <SectionColumn>
+          <SlideList>
+            { props.collection.slides.map((slide, i) =>
+            <SlideListItem
+              key={i}
+              selected={i === currentSlide}
+              onClick={() => goToSlide(i)}
+            />
+            )}
+          </SlideList>
+        </SectionColumn>
+        <NextPreviousSectionColumn text>
+          <PreviousButton onClick={goToPreviousSlide}>
+            <span>Previous</span>
+            { renderArrowSVG(true) }
+          </PreviousButton>
+          <NextButton onClick={goToNextSlide}>
+            <span>Next</span>
+            { renderArrowSVG() }
+          </NextButton>
+        </NextPreviousSectionColumn>
+      </Section>
+
+      <Section text>
+        <SectionColumn text>
+          <p>{ props.collection.role }</p>
+          <SectionColumnLastParagraph>
+            { geniusFirstColumn() }
+          </SectionColumnLastParagraph>
+        </SectionColumn>
+        <SectionColumn text>
+          <MediaQuery minWidth={columnBreakpoint}>
+            <p>&nbsp;</p>
+          </MediaQuery>
+          <SectionColumnFirstParagraph>
+            { geniusSecondColumn() }
+          </SectionColumnFirstParagraph>
+        </SectionColumn>
+      </Section>
+    </React.Fragment>
+  );
 }
 
 const imageRatio = '.695555556';
@@ -153,6 +195,7 @@ const Slides = styled.div`
   width: 100%;
   transition: left .3s ease;
   left: 0;
+  ${props => props.endcapAnimation && "transition: left .7s cubic-bezier(0.5, -0.15, 0.72, 0.07) 0ms"};
 `;
 
 const Slide = styled.div`
@@ -286,5 +329,3 @@ const TextLink = styled.span`
 const ExternalLink = styled.a`
   white-space: nowrap;
 `;
-
-export default Slideshow;
