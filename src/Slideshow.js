@@ -27,11 +27,11 @@ export default function Slideshow(props) {
    *
    * Instead, we rely on this state being set to 'true' to show the animation,
    * but then re-set the transition to the regular one after the transition is
-   * complete (.7s);
+   * started, keeping the number small to 'beat' fast user interactions (.3s);
    */
   useEffect(() => {
     console.log("Endcap transition running");
-    setTimeout(setEndcapAnimation(false), 700);
+    setTimeout(setEndcapAnimation(false), 300);
   }, [endcapAnimation]);
 
   function goToSlide(i) {
@@ -72,9 +72,9 @@ export default function Slideshow(props) {
     setCurrentSlide(newSlide);
   }
 
-  const renderArrowSVG = (previous = false) => {
+  const renderArrowSVG = (previous = null) => {
     return (
-      <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
+      <Arrow width="9" height="16" viewBox="0 -.5 9 16" xmlns="http://www.w3.org/2000/svg" previous={!!previous}><title>arrow</title><path d="M1 1l6.376 6.376L1.126 14" strokeWidth="2" stroke="#333" fill="none" fillRule="evenodd" strokeLinecap="round" strokeLinejoin="round"/></Arrow>
     );
   }
 
@@ -158,7 +158,7 @@ export default function Slideshow(props) {
         <NextPreviousSectionColumn text>
           <PreviousButton onClick={goToPreviousSlide}>
             <span>Previous</span>
-            { renderArrowSVG(true) }
+            { renderArrowSVG("previous") }
           </PreviousButton>
           <NextButton onClick={goToNextSlide}>
             <span>Next</span>
