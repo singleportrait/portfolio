@@ -1,0 +1,71 @@
+import styled from 'styled-components/macro';
+
+import {
+  maxImageWidth,
+  columnBreakpoint, slideshowBreakpoint,
+  fingerWidth,
+  mediumScreenSlideshowMargins, smallScreenMargins,
+  ifNarrowerThan,
+} from './Styles';
+
+export const Section = styled.section`
+  display: flex;
+  max-width: ${maxImageWidth};
+  margin: 0 auto;
+  justify-content: space-between;
+  position: relative;
+
+  ${props => props.slideshow && `
+    overflow: hidden;
+    max-width: none;
+  `}
+
+  ${props => props.header && `
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+  `}
+
+  ${ifNarrowerThan(slideshowBreakpoint)} {
+    ${props => !props.slideshow && `margin: 0 ${mediumScreenSlideshowMargins}`};
+
+    ${props => props.header && "margin-top: 1rem;"}
+  }
+
+  ${ifNarrowerThan(columnBreakpoint)} {
+    ${props => !props.slideshow && `margin: 0 ${smallScreenMargins}`};
+
+    ${props => props.text && "flex-direction: column;"}
+
+    ${props => props.header && "margin-top: 1rem;"}
+  }
+`
+
+export const SectionColumn = styled.div`
+  position: relative;
+  width: ${props => props.text ? "calc(50% - 2rem)" : "50%"};
+
+  ${ifNarrowerThan(columnBreakpoint)} {
+    width: ${props => props.text ? `calc(100% - ${fingerWidth})` : "auto"};
+  }
+`
+
+export const NextPreviousSectionColumn = styled(SectionColumn)`
+  display: flex;
+  justify-content: space-between;
+
+  ${ifNarrowerThan(columnBreakpoint)} {
+    width: auto;
+    justify-content: flex-end;
+`;
+
+export const SectionColumnLastParagraph = styled.p`
+  ${ifNarrowerThan(columnBreakpoint)} {
+    margin-bottom: 0;
+  }
+`;
+
+export const SectionColumnFirstParagraph = styled.p`
+  ${ifNarrowerThan(columnBreakpoint)} {
+    margin-top: 0;
+  }
+`;

@@ -4,7 +4,7 @@ import MediaQuery from 'react-responsive'
 import logo from './logo.svg';
 
 import { GlobalStyles } from './GlobalStyles';
-import { Section, SectionColumn } from './Section';
+import { Section, SectionColumn } from './SectionStyles';
 import Slideshow from './Slideshow';
 
 import { SLIDES } from './slidesData';
