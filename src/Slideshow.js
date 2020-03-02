@@ -279,7 +279,16 @@ export default function Slideshow(props) {
       </Section>
 
       <Section slideshow>
-        <Hammer onSwipe={handleSwipe}>
+        <Hammer
+          onSwipe={handleSwipe}
+          options={{
+            recognizers: {
+              swipe: {
+                velocity: .1,
+              }
+            }
+          }}
+        >
           <Slides
             style={{left: currentSlide * -100 + "%"}}
             endcapAnimation={endcapAnimation}
