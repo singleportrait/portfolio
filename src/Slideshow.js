@@ -4,6 +4,7 @@ import Hammer from 'react-hammerjs';
 
 import SlideshowArrowIcon from './SlideshowArrowIcon';
 import ExternalLinkIcon from './ExternalLinkIcon';
+import GeniusText from './GeniusText';
 
 import {
   Section, SectionColumn,
@@ -354,7 +355,14 @@ export default function Slideshow(props) {
         <SectionColumn text>
           <p>{ props.collection.role }</p>
           <SectionColumnLastParagraph>
-            { props.collection.key === "genius" && geniusFirstColumn() }
+            { props.collection.key === "genius" &&
+              <GeniusText
+                firstColumn
+                slides={props.collection.slides}
+                currentSlide={[currentSlide, setCurrentSlide]}
+                endcapAnimation={[endcapAnimation, setEndcapAnimation]}
+              />
+            }
             { props.collection.key === "aidin" && aidinFirstColumn() }
             { props.collection.key === "freelance" && freelanceFirstColumn() }
             { props.collection.key === "refinery29" && refinery29FirstColumn() }
@@ -365,7 +373,14 @@ export default function Slideshow(props) {
             <p>&nbsp;</p>
           </MediaQuery>
           <SectionColumnFirstParagraph>
-            { props.collection.key === "genius" && geniusSecondColumn() }
+            { props.collection.key === "genius" &&
+              <GeniusText
+                secondColumn
+                slides={props.collection.slides}
+                currentSlide={[currentSlide, setCurrentSlide]}
+                endcapAnimation={[endcapAnimation, setEndcapAnimation]}
+              />
+            }
             { props.collection.key === "aidin" && aidinSecondColumn() }
             { props.collection.key === "freelance" && freelanceSecondColumn() }
             { props.collection.key === "refinery29" && refinery29SecondColumn() }
