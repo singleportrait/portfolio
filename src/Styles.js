@@ -18,6 +18,7 @@ export const linkColor = "#d04d00";
 export const gradientStartColor = "#fdefbd";
 export const gradientEndColor = "#fbbf9c";
 
+// TODO: Remove this? It's weird syntax and kinda confusing...
 export const ifNarrowerThan = (breakpoint) => {
   return `@media screen and (max-width: ${breakpoint})`;
 }

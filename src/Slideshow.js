@@ -45,7 +45,7 @@ export default function Slideshow(props) {
   // }, [endcapAnimation]);
 
   function goToSlide(i) {
-    console.log("Going to slide", i);
+    console.log("Going to slide", i); // TODO: Remove consoles
     setEndcapAnimation(false);
 
     setCurrentSlide(i);
