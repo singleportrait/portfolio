@@ -31,16 +31,62 @@ export default function SlideshowText(props) {
     <React.Fragment>
       { props.collectionName === "aidin" && props.firstColumn && // Aidin slides, first column
         <React.Fragment>
-          Over 6 months, I worked with Aidin, an NYC-based healthcare company, to redesign and bring product thinking to their app. Aidin helps ease patient care transitions (say, moving from a hospital to a nursing home) by bringing quality data to the moment when patients choose where they want to receive their care.
+          For over two years I worked with
+          <Space />
+          <ExternalLink href="https://www.myaidin.com/">
+            Aidin
+            <ExternalLinkIcon />
+          </ExternalLink>
+          , an NYC-based healthcare company, to redesign and bring product thinking to their app. Aidin helps ease patient care transitions (say, moving from a hospital to a nursing home) by bringing quality data to the moment when patients choose where they want to receive their care.
           <br /><br />
-          Together we rebuilt Aidin from the ground up, rethinking how referrals are sent, received, and managed, as well as
+          Together we rebuilt Aidin from
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-before-after')}
+            selected={selectedSlideName === 'aidin-before-after'}
+          >the ground up</TextLink>,
+          rethinking how referrals are
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-sending-referral')}
+            selected={selectedSlideName === 'aidin-sending-referral'}
+          >sent</TextLink>,
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-receiving-referral')}
+            selected={selectedSlideName === 'aidin-receiving-referral'}
+          >received</TextLink>,
+          and
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-referrals-dashboard')}
+            selected={selectedSlideName === 'aidin-referrals-dashboard'}
+          >managed</TextLink>,
+          as well as exploring their future-forward
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-providers-dashboard')}
+            selected={selectedSlideName === 'aidin-providers-dashboard'}
+          >business goals</TextLink>.
         </React.Fragment>
       }
       { props.collectionName === "aidin" && props.secondColumn && // Aidin slides, second column
         <React.Fragment>
-          exploring their future-forward business goals. Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive user testing, interviewing, and demoing of our proposed solutions as we progressed.
+          Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-user-testing')}
+            selected={selectedSlideName === 'aidin-user-testing'}
+          >user testing</TextLink>,
+          interviewing, demoing, and beta testing of our proposed solutions.
           <br /><br />
-          I’m continuing to work with them through development, providing project management, design consultation, code review, and QA testing as the project moves into reality.
+          After setting the vision, we moved into rebuilding the app. I managed our
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('aidin-project-management')}
+            selected={selectedSlideName === 'aidin-project-management'}
+          >roadmap</TextLink>,
+          as well as our engineering team, providing project management, code review, and QA testing, while managing the full Aidin team’s evolving requirements and needs with agile development.
         </React.Fragment>
       }
 
