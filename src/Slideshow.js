@@ -35,19 +35,26 @@ export default function Slideshow(props) {
    * but then re-set the transition to the regular one after the transition is
    * started, keeping the number small to 'beat' fast user interactions (.3s);
    */
+
+  /* TODO: Can only get the animation to work with the swipe on mobile by manually
+   * setting to false in each of the functions. Argh! But, will figure it out,
+   * or just do it the ugly way, ah well.
+   */
   useEffect(() => {
     console.log("Endcap transition running");
-    setTimeout(setEndcapAnimation(false), 300);
+    // setTimeout(setEndcapAnimation(false), 300);
   }, [endcapAnimation]);
 
   function goToSlide(i) {
     console.log("Going to slide", i);
+    setEndcapAnimation(false);
 
     setCurrentSlide(i);
   }
 
   function goToSlideByName(name) {
     console.log("Going to slide", name);
+    setEndcapAnimation(false);
 
     const newSlideIndex = props.collection.slides.findIndex(slide => slide.name === name);
 
@@ -56,6 +63,7 @@ export default function Slideshow(props) {
 
   function goToPreviousSlide() {
     console.log("Going to previous slide");
+    setEndcapAnimation(false);
 
     let newSlide = currentSlide - 1;
     if (newSlide < 0) {
@@ -68,6 +76,7 @@ export default function Slideshow(props) {
 
   function goToNextSlide() {
     console.log("Going to next slide");
+    setEndcapAnimation(false);
 
     let newSlide = currentSlide + 1;
     if (newSlide >= props.collection.slides.length) {
