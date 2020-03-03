@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MediaQuery from 'react-responsive';
 import Hammer from 'react-hammerjs';
 
@@ -39,10 +39,10 @@ export default function Slideshow(props) {
    * setting to false in each of the functions. Argh! But, will figure it out,
    * or just do it the ugly way, ah well.
    */
-  useEffect(() => {
-    console.log("Endcap transition running");
+  // useEffect(() => {
+  //   console.log("Endcap transition running");
     // setTimeout(setEndcapAnimation(false), 300);
-  }, [endcapAnimation]);
+  // }, [endcapAnimation]);
 
   function goToSlide(i) {
     console.log("Going to slide", i);
