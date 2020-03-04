@@ -59,15 +59,3 @@ export const NextPreviousSectionColumn = styled(SectionColumn)`
     width: auto;
     justify-content: flex-end;
 `;
-
-export const SectionColumnLastParagraph = styled.p`
-  ${ifNarrowerThan(columnBreakpoint)} {
-    margin-bottom: 0;
-  }
-`;
-
-export const SectionColumnFirstParagraph = styled.p`
-  ${ifNarrowerThan(columnBreakpoint)} {
-    margin-top: 0;
-  }
-`;

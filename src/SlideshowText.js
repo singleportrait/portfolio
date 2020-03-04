@@ -1,7 +1,10 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 import PropTypes from 'prop-types';
 
 import ExternalLinkIcon from './ExternalLinkIcon';
+
+import { columnBreakpoint } from './Styles';
 
 import {
   TextLink, ExternalLink
@@ -28,8 +31,8 @@ export default function SlideshowText(props) {
   }
 
   return (
-    <React.Fragment>
-      { props.collectionName === "aidin" && props.firstColumn && // Aidin slides, first column
+    <p>
+      { props.collectionName === "aidin" && props.showFirstColumn && // Aidin slides, first column
         <React.Fragment>
           For over two years I worked with
           <Space />
@@ -70,8 +73,11 @@ export default function SlideshowText(props) {
           >business goals</TextLink>.
         </React.Fragment>
       }
-      { props.collectionName === "aidin" && props.secondColumn && // Aidin slides, second column
+      { props.collectionName === "aidin" && props.showSecondColumn && // Aidin slides, second column
         <React.Fragment>
+          <MediaQuery maxWidth={columnBreakpoint}>
+            <br /><br />
+          </MediaQuery>
           Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive
           <Space />
           <TextLink
@@ -91,7 +97,7 @@ export default function SlideshowText(props) {
       }
 
 
-      { props.collectionName === "genius" && props.firstColumn && // Genius slides, first column
+      { props.collectionName === "genius" && props.showFirstColumn && // Genius slides, first column
         <React.Fragment>
           I was recently at
           <Space />
@@ -106,9 +112,10 @@ export default function SlideshowText(props) {
             selected={selectedSlideName === 'genius-web-annotator'}
           >web annotation platform</TextLink>,
           redesigned all of the core pieces of our site (including
+          <Space />
         </React.Fragment>
       }
-      { props.collectionName === "genius" && props.secondColumn && // Genius slides, second column
+      { props.collectionName === "genius" && props.showSecondColumn && // Genius slides, second column
         <React.Fragment>
           <TextLink
             onClick={() => goToSlideByName('genius-song-after')}
@@ -144,7 +151,7 @@ export default function SlideshowText(props) {
       }
 
 
-      { props.collectionName === "freelance" && props.firstColumn && // Freelance slides, first column
+      { props.collectionName === "freelance" && props.showFirstColumn && // Freelance slides, first column
         <React.Fragment>
           Before Genius I spent time freelancing, working on my own projects and with various companies in the U.S. and Europe. A personal site I enjoyed making was
           <Space />
@@ -168,9 +175,10 @@ export default function SlideshowText(props) {
           >Mapsense</TextLink>,
           <Space />
           an innovative way of using maths
+          <Space />
         </React.Fragment>
       }
-      { props.collectionName === "freelance" && props.secondColumn && // Freelance slides, second column
+      { props.collectionName === "freelance" && props.showSecondColumn && // Freelance slides, second column
         <React.Fragment>
           instead of images to provide maps online (since bought by Apple lol);
           <Space />
@@ -195,7 +203,7 @@ export default function SlideshowText(props) {
       }
 
 
-      { props.collectionName === "refinery29" && props.firstColumn && // Refinery29 slides, first column
+      { props.collectionName === "refinery29" && props.showFirstColumn && // Refinery29 slides, first column
         <React.Fragment>
           After moving to New York I began interning at
           <Space />
@@ -203,9 +211,10 @@ export default function SlideshowText(props) {
             Refinery29
             <ExternalLinkIcon />
           </ExternalLink>, the leading fashion &amp; lifestyle platform for women, as a graphic design intern. From there I took an unexpected leap to being the first member of their newfound tech team under their first CTO. I started knowing a bit of HTML and slowly (it felt very fast) built off that knowledge to become a full-stack PHP developer, moving the site from years-old MovableType code to a custom framework. We built every page on the site from
+          <Space />
         </React.Fragment>
       }
-      { props.collectionName === "refinery29" && props.secondColumn && // Refinery29 slides, second column
+      { props.collectionName === "refinery29" && props.showSecondColumn && // Refinery29 slides, second column
         <React.Fragment>
           scratch, as well as new features like a
           <Space />
@@ -228,12 +237,12 @@ export default function SlideshowText(props) {
           <ExternalLink href="http://github.com/singleportrait/">
             github username
             <ExternalLinkIcon />
-          </ExternalLink>
+          </ExternalLink>,
           <Space />
-          , which they still see sprinkled throughout the code. 😱
+          which they still see sprinkled throughout the code. 😱
         </React.Fragment>
       }
-    </React.Fragment>
+    </p>
   );
 }
 

@@ -7,7 +7,6 @@ import SlideshowText from './SlideshowText';
 
 import {
   Section, SectionColumn,
-  SectionColumnLastParagraph, SectionColumnFirstParagraph,
   NextPreviousSectionColumn,
 } from './SectionStyles';
 
@@ -160,30 +159,38 @@ export default function Slideshow(props) {
       <Section text>
         <SectionColumn text>
           <p>{ props.collection.role }</p>
-          <SectionColumnLastParagraph>
-            <SlideshowText
-              firstColumn
-              collectionName={props.collection.key}
-              slides={props.collection.slides}
-              currentSlide={[currentSlide, setCurrentSlide]}
-              setEndcapAnimation={setEndcapAnimation}
-            />
-          </SectionColumnLastParagraph>
-        </SectionColumn>
-        <SectionColumn text>
           <MediaQuery minWidth={columnBreakpoint}>
-            <p>&nbsp;</p>
-          </MediaQuery>
-          <SectionColumnFirstParagraph>
             <SlideshowText
-              secondColumn
+              showFirstColumn
               collectionName={props.collection.key}
               slides={props.collection.slides}
               currentSlide={[currentSlide, setCurrentSlide]}
               setEndcapAnimation={setEndcapAnimation}
             />
-          </SectionColumnFirstParagraph>
+          </MediaQuery>
+          <MediaQuery maxWidth={columnBreakpoint}>
+            <SlideshowText
+              showFirstColumn
+              showSecondColumn
+              collectionName={props.collection.key}
+              slides={props.collection.slides}
+              currentSlide={[currentSlide, setCurrentSlide]}
+              setEndcapAnimation={setEndcapAnimation}
+            />
+          </MediaQuery>
         </SectionColumn>
+        <MediaQuery minWidth={columnBreakpoint}>
+          <SectionColumn text>
+            <p>&nbsp;</p>
+            <SlideshowText
+              showSecondColumn
+              collectionName={props.collection.key}
+              slides={props.collection.slides}
+              currentSlide={[currentSlide, setCurrentSlide]}
+              setEndcapAnimation={setEndcapAnimation}
+            />
+          </SectionColumn>
+        </MediaQuery>
       </Section>
     </React.Fragment>
   );
