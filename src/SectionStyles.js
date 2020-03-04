@@ -5,7 +5,6 @@ import {
   columnBreakpoint, slideshowBreakpoint,
   fingerWidth,
   mediumScreenSlideshowMargins, smallScreenMargins,
-  ifNarrowerThan,
 } from './Styles';
 
 export const Section = styled.section`
@@ -25,13 +24,13 @@ export const Section = styled.section`
     margin-bottom: .5rem;
   `}
 
-  ${ifNarrowerThan(slideshowBreakpoint)} {
+  @media screen and (max-width: ${slideshowBreakpoint}) {
     ${props => !props.slideshow && `margin: 0 ${mediumScreenSlideshowMargins}`};
 
     ${props => props.header && "margin-top: 1rem;"}
   }
 
-  ${ifNarrowerThan(columnBreakpoint)} {
+  @media screen and (max-width: ${columnBreakpoint}) {
     ${props => !props.slideshow && `margin: 0 ${smallScreenMargins}`};
 
     ${props => props.text && "flex-direction: column;"}
@@ -46,7 +45,7 @@ export const SectionColumn = styled.div`
 
   ${props => props.intro && "margin-bottom: 1rem;"}
 
-  ${ifNarrowerThan(columnBreakpoint)} {
+  @media screen and (max-width: ${columnBreakpoint}) {
     width: ${props => props.text ? `calc(100% - ${fingerWidth})` : "auto"};
   }
 `
@@ -55,7 +54,7 @@ export const NextPreviousSectionColumn = styled(SectionColumn)`
   display: flex;
   justify-content: space-between;
 
-  ${ifNarrowerThan(columnBreakpoint)} {
+  @media screen and (max-width: ${columnBreakpoint}) {
     width: auto;
     justify-content: flex-end;
 `;
