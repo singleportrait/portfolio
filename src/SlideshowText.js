@@ -22,7 +22,6 @@ export default function SlideshowText(props) {
   }
 
   function goToSlideByName(name) {
-    console.log("Going to slide", name);
     setEndcapAnimation(false);
 
     const newSlideIndex = props.slides.findIndex(slide => slide.name === name);

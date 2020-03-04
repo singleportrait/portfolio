@@ -1,4 +1,4 @@
-import styled from 'styled-components/macro'; // TODO: Remove macros
+import styled from 'styled-components';
 
 import {
   columnBreakpoint, slideshowBreakpoint,

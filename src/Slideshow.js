@@ -44,14 +44,12 @@ export default function Slideshow(props) {
   // }, [endcapAnimation]);
 
   function goToSlide(i) {
-    console.log("Going to slide", i); // TODO: Remove consoles
     setEndcapAnimation(false);
 
     setCurrentSlide(i);
   }
 
   function goToPreviousSlide() {
-    console.log("Going to previous slide");
     setEndcapAnimation(false);
 
     let newSlide = currentSlide - 1;
@@ -64,7 +62,6 @@ export default function Slideshow(props) {
   }
 
   function goToNextSlide() {
-    console.log("Going to next slide");
     setEndcapAnimation(false);
 
     let newSlide = currentSlide + 1;
