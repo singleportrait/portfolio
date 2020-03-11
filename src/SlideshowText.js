@@ -98,7 +98,7 @@ export default function SlideshowText(props) {
 
       { props.collectionName === "genius" && props.showFirstColumn && // Genius slides, first column
         <React.Fragment>
-          I was recently at
+          I worked at
           <Space />
           <ExternalLink href="http://genius.com/">
             Genius
