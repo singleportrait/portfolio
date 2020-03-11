@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import {
   columnBreakpoint, slideshowBreakpoint,
@@ -6,9 +6,26 @@ import {
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
   primaryColor, linkColor, fingerWidth,
   mediumScreenSlideshowMargins, smallScreenSlideshowMargins,
+  gradientEndColor,
 } from './Styles';
 
 const imageRatio = '.695555556';
+
+const rotate = keyframes`
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+`;
+
+const loaderDiameter = "6rem";
+const loaderRadius = "3rem";
 
 export const Slides = styled.div`
   position: relative;
@@ -17,6 +34,31 @@ export const Slides = styled.div`
   transition: left .3s ease;
   left: 0;
   ${props => props.endcapAnimation && "transition: left .7s cubic-bezier(0.5, -0.15, 0.72, 0.07) 0ms"};
+
+  &:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    width: ${loaderDiameter};
+    height: ${loaderDiameter};
+    top: 14vw;
+    left: calc(50% - 3rem);
+    text-indent: -9999rem;
+    border: 1.1rem solid rgba(255, 255, 255, 0.2);
+    border-left: 1.1rem solid ${gradientEndColor};
+    box-sizing: border-box;
+    transform: translateZ(0);
+    animation: ${rotate} 1.5s infinite linear;
+    top: calc(${maxImageWidth} * ${imageRatio} / 2 - (${loaderDiameter} / 2));
+
+    @media screen and (max-width: ${slideshowBreakpoint}) {
+      top: calc(${mediumScreenImageWidth} * ${imageRatio} / 2 - ${loaderRadius});
+    }
+
+    @media screen and (max-width: ${columnBreakpoint}) {
+      top: calc(${smallScreenImageWidth} * ${imageRatio} / 2 - ${loaderRadius});
+    }
+  }
 `;
 
 export const Slide = styled.div`
