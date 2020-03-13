@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "share192.png",
+      "src": "jennscheer-192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "share512.png",
+      "src": "jennscheer-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
