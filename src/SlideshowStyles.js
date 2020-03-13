@@ -160,7 +160,9 @@ const sharedPreviousNextStyles = `
 
   &:hover {
     color: #666;
+  }
 
+  &:active {
     svg path {
       stroke: ${primaryColor};
     }
