@@ -1,5 +1,18 @@
 export const SLIDES = [
   {
+    key: 'locally-grown',
+    title: 'Locally Grown',
+    role: 'Design & Development @ Locally Grown',
+    slides: [
+      { name: 'locally-grown-channel', type: 'video', src: './images/locally-grown-channel.png', videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/locally-grown-overview-video-compressed.mp4', alt: 'Locally Grown Channel' },
+      { name: 'locally-grown-inspiration', type: 'image', src: './images/locally-grown-inspiration.png', alt: 'Locally Grown Inspiration' },
+      { name: 'locally-grown-channel-with-mobile', type: 'image', src: './images/locally-grown-channel-with-mobile.png', alt: 'Locally Grown Channel with Mobile' },
+      { name: 'locally-grown-tv-guide-with-mobile', type: 'image', src: './images/locally-grown-tv-guide-with-mobile.png', alt: 'Locally Grown TV Guide with Mobile' },
+      { name: 'locally-grown-channels-with-mobile', type: 'image', src: './images/locally-grown-channels-with-mobile.png', alt: 'Locally Grown Channels Index with Mobile' },
+      // { name: 'locally-grown-', type: 'image', src: './images/locally-grown-.png', alt: 'Locally Grown' },
+    ]
+  },
+  {
     key: 'aidin',
     title: 'Aidin',
     role: 'Head of Product @ Aidin',

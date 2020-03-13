@@ -31,6 +31,53 @@ export default function SlideshowText(props) {
 
   return (
     <p>
+      { props.collectionName === "locally-grown" && props.showFirstColumn && // Locally Grown slides, first column
+        <React.Fragment>
+          <ExternalLink href="https://www.locallygrown.tv/">
+            Locally Grown
+            <ExternalLinkIcon />
+          </ExternalLink>
+          <Space />
+          is a streaming platform that gives under-represented videos and voices throughout history & culture a place to shine (think: public access television). Locally Grown is the long-dreamed vision of Jamil Baldwin and Tyler Bernard, two LA-based artists. They tapped into their rich community of creators and curators, while I built a platform for them to grow into.
+          <br /><br />
+          In building the site, we wanted an experience that let the
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('locally-grown-inspiration')}
+            selected={selectedSlideName === 'locally-grown-inspiration'}
+          >programming shine</TextLink>,
+          and a big requirement there was
+          <Space />
+        </React.Fragment>
+      }
+
+      { props.collectionName === "locally-grown" && props.showSecondColumn && // Locally Grown slides, second column
+        <React.Fragment>
+          to prevent users from controlling which videos they play—no pause, no next, no skip. It’s fundamentally a lean-back experience, which offered enjoyable technical challenges, especially on mobile. And like TV, the site is built of only a few core components: each
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('locally-grown-channel-with-mobile')}
+            selected={selectedSlideName === 'locally-grown-channel-with-mobile'}
+          >channel</TextLink>,
+          a
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('locally-grown-tv-guide-with-mobile')}
+            selected={selectedSlideName === 'locally-grown-tv-guide-with-mobile'}
+          >TV guide</TextLink>,
+          and a
+          <Space />
+          <TextLink
+            onClick={() => goToSlideByName('locally-grown-channels-with-mobile')}
+            selected={selectedSlideName === 'locally-grown-channels-with-mobile'}
+          >list of channels</TextLink>.
+          <br /><br />
+          Locally Grown is an ever-morphing experiment, a resource for rare materials, and hopefully something that lasts in a new era of streaming. Enjoy!
+        </React.Fragment>
+      }
+
+
+
       { props.collectionName === "aidin" && props.showFirstColumn && // Aidin slides, first column
         <React.Fragment>
           For over two years I worked with
