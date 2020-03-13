@@ -4,7 +4,7 @@ import {
   columnBreakpoint, slideshowBreakpoint,
   smallScreenMargins,
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
-  primaryColor, linkColor,
+  linkColor,
   mediumScreenSlideshowMargins, smallScreenSlideshowMargins,
   fingerWidth,
 } from './Styles';
@@ -183,7 +183,7 @@ export const PreviousButton = styled.div`
 
   font-weight: 400;
   margin-left: -1rem;
-  color: ${primaryColor};
+  color: ${linkColor};
 `;
 
 export const NextButton = styled.div`

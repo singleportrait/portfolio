@@ -15,5 +15,8 @@ export const smallScreenSlideshowMargins = `calc((100vw - ${smallScreenImageWidt
 export const primaryColor = "#D1D4A7";
 export const linkColor = "#8B9500";
 
-export const gradientStartColor = "#e3e3e3";
-export const gradientEndColor = "#c6c6c6";
+export const darkGradientStartColor = "#e9e9e9";
+export const darkGradientEndColor = "#b3b3b3";
+
+export const lightGradientStartColor = "#f3f3f3";
+export const lightGradientEndColor = "#b9b9b9";
