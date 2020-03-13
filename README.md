@@ -2,13 +2,18 @@ Welcome to my portfolio.
 
 ## Compressing Images & Videos
 
-Use [PNG Quant](https://pngquant.org/) to compress the slideshow images. This should be done for all images to keep load times down.
+Use [PNG Quant](https://pngquant.org/) ([installation instructions here](https://pngquant.org/install.html)) to compress the slideshow images. This should be done for all images to keep load times down.
 
 ```sh
 pngquant <oldfile.png>
+
+# If you have a bunch of files that start with the same prefix, you can use, for instance:
+pngquant locally-grown-*
 ```
 
 Use Edwin's FFMpeg compression script for the videos, but add `faststart` for mobile loading (help thread [here](https://stackoverflow.com/questions/10328401/html5-how-to-stream-large-mp4-files):
+
+Videos should be a ratio of 2556x1608 (1:1.59) to fit inside the browser frame.
 
 ```sh
 ffmpeg -i <input-filename.mp4> -vcodec h264 -strict -2 -an -movflags faststart <output-filename.mp4>
