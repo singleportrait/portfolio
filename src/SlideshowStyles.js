@@ -164,7 +164,7 @@ const sharedPreviousNextStyles = `
 
   &:active {
     svg path {
-      stroke: ${primaryColor};
+      stroke: ${linkColor};
     }
   }
 
