@@ -14,10 +14,6 @@ import { columnBreakpoint, linkColor } from './Styles';
 function App() {
   const [copied, setCopied] = useState(false);
 
-  const getCollection = (collectionKey) => {
-    return SLIDES.find(collection => collection.key === collectionKey);
-  }
-
   const copyEmail = () => {
     setCopied(true);
 
@@ -38,10 +34,9 @@ function App() {
           <p>I am a product designer &amp; developer in NYC.</p>
         </SectionColumn>
       </Section>
-      <Slideshow collection={getCollection("aidin")} />
-      <Slideshow collection={getCollection("genius")} />
-      <Slideshow collection={getCollection("freelance")} />
-      <Slideshow collection={getCollection("refinery29")} />
+      { SLIDES.map(collection =>
+        <Slideshow key={collection.key} collection={collection} />
+      )}
       <Section header>
         <MediaQuery minWidth={columnBreakpoint}>
           <SectionColumn />
