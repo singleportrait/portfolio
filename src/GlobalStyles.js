@@ -3,9 +3,17 @@ import { createGlobalStyle } from 'styled-components';
 import {
   slideshowBreakpoint, columnBreakpoint, fingerWidth,
   gradientStartColor, gradientEndColor,
+  primaryColor,
 } from './Styles';
 
 export const GlobalStyles = createGlobalStyle`
+  ::selection {
+    background: ${primaryColor}; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: ${primaryColor}; /* Gecko Browsers */
+  }
+
   html {
     background: linear-gradient(${gradientStartColor}, ${gradientEndColor});
     background-attachment: fixed;

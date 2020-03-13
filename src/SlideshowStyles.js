@@ -4,9 +4,9 @@ import {
   columnBreakpoint, slideshowBreakpoint,
   smallScreenMargins,
   maxImageWidth, mediumScreenImageWidth, smallScreenImageWidth,
-  primaryColor, linkColor, fingerWidth,
+  primaryColor, linkColor,
   mediumScreenSlideshowMargins, smallScreenSlideshowMargins,
-  gradientEndColor,
+  fingerWidth,
 } from './Styles';
 
 const imageRatio = '.695555556';
@@ -45,7 +45,7 @@ export const Slides = styled.div`
     left: calc(50% - 3rem);
     text-indent: -9999rem;
     border: 1.1rem solid rgba(255, 255, 255, 0.2);
-    border-left: 1.1rem solid ${gradientEndColor};
+    border-left: 1.1rem solid ${linkColor};
     box-sizing: border-box;
     transform: translateZ(0);
     animation: ${rotate} 1.5s infinite linear;
@@ -205,9 +205,17 @@ export const TextLink = styled.span`
     pointer-events: all;
     cursor: ${props => props.selected ? "default" : "pointer"};
     ${props => props.selected && `color: ${linkColor}`};
+
+    &:hover {
+      color: ${linkColor};
+    }
   }
 `;
 
 export const ExternalLink = styled.a`
   white-space: nowrap;
+
+  &:hover {
+    color: ${linkColor};
+  }
 `;
