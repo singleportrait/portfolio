@@ -72,6 +72,7 @@ export default function SlideshowText(props) {
           >business goals</TextLink>.
         </React.Fragment>
       }
+
       { props.collectionName === "aidin" && props.showSecondColumn && // Aidin slides, second column
         <React.Fragment>
           <MediaQuery maxWidth={columnBreakpoint}>
@@ -96,6 +97,7 @@ export default function SlideshowText(props) {
       }
 
 
+
       { props.collectionName === "genius" && props.showFirstColumn && // Genius slides, first column
         <React.Fragment>
           I worked at
@@ -114,6 +116,7 @@ export default function SlideshowText(props) {
           <Space />
         </React.Fragment>
       }
+
       { props.collectionName === "genius" && props.showSecondColumn && // Genius slides, second column
         <React.Fragment>
           <TextLink
@@ -150,6 +153,7 @@ export default function SlideshowText(props) {
       }
 
 
+
       { props.collectionName === "freelance" && props.showFirstColumn && // Freelance slides, first column
         <React.Fragment>
           Before Genius I spent time freelancing, working on my own projects and with various companies in the U.S. and Europe. A personal site I enjoyed making was
@@ -177,6 +181,7 @@ export default function SlideshowText(props) {
           <Space />
         </React.Fragment>
       }
+
       { props.collectionName === "freelance" && props.showSecondColumn && // Freelance slides, second column
         <React.Fragment>
           instead of images to provide maps online (since bought by Apple lol);
@@ -202,6 +207,7 @@ export default function SlideshowText(props) {
       }
 
 
+
       { props.collectionName === "refinery29" && props.showFirstColumn && // Refinery29 slides, first column
         <React.Fragment>
           After moving to New York I began interning at
@@ -213,6 +219,7 @@ export default function SlideshowText(props) {
           <Space />
         </React.Fragment>
       }
+
       { props.collectionName === "refinery29" && props.showSecondColumn && // Refinery29 slides, second column
         <React.Fragment>
           scratch, as well as new features like a
