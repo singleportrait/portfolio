@@ -2,8 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import {
   slideshowBreakpoint, columnBreakpoint, fingerWidth,
-  darkGradientStartColor, darkGradientEndColor,
-  lightGradientStartColor, lightGradientEndColor,
+  gradientStartColor, gradientEndColor,
   primaryColor,
 } from './Styles';
 
@@ -16,7 +15,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background: linear-gradient(${darkGradientStartColor}, ${darkGradientEndColor});
+    background-image: linear-gradient(185deg, ${gradientStartColor} 3%, ${gradientEndColor} 100%);
     background-attachment: fixed;
     background-size: cover;
     height: 101%;
@@ -28,7 +27,7 @@ export const GlobalStyles = createGlobalStyle`
     bottom: 0;
     left: 50%;
     right: 0;
-    background: linear-gradient(${lightGradientStartColor}, ${lightGradientEndColor});
+    background: #fff;
     content: " ";
     z-index: -1;
 
