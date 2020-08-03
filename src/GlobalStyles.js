@@ -3,15 +3,15 @@ import { createGlobalStyle } from 'styled-components';
 import {
   slideshowBreakpoint, columnBreakpoint, fingerWidth,
   gradientStartColor, gradientEndColor,
-  primaryColor,
+  highlightColor,
 } from './Styles';
 
 export const GlobalStyles = createGlobalStyle`
   ::selection {
-    background: ${primaryColor}; /* WebKit/Blink Browsers */
+    background: ${highlightColor}; /* WebKit/Blink Browsers */
   }
   ::-moz-selection {
-    background: ${primaryColor}; /* Gecko Browsers */
+    background: ${highlightColor}; /* Gecko Browsers */
   }
 
   html {

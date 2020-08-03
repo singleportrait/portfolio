@@ -12,8 +12,9 @@ export const mediumScreenSlideshowMargins = `calc((100vw - ${mediumScreenImageWi
 export const smallScreenImageWidth = "98vw";
 export const smallScreenSlideshowMargins = `calc((100vw - ${smallScreenImageWidth}) / 2)`;
 
-export const primaryColor = "#D1D4A7";
-export const linkColor = "#8B9500";
+// The highlight lays transparently on the page so one tactic is for it to be a little darker than the darkest part of the gradient
+export const highlightColor = "#FFAB79";
+export const linkColor = "#903C8E";
 
-export const gradientStartColor = "#FAFAF1";
-export const gradientEndColor = "#E0E77C";
+export const gradientStartColor = "#F3F3F3";
+export const gradientEndColor = "#DBA5D9";
