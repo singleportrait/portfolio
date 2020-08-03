@@ -25,13 +25,21 @@ export const Section = styled.section`
   `}
 
   @media screen and (max-width: ${slideshowBreakpoint}) {
-    ${props => !props.slideshow && `margin: 0 ${mediumScreenSlideshowMargins}`};
+    ${props => !props.slideshow && `
+      margin-top: 0;
+      margin-left: ${mediumScreenSlideshowMargins};
+      margin-right: ${mediumScreenSlideshowMargins};
+    `}
 
     ${props => props.header && "margin-top: 1rem;"}
   }
 
   @media screen and (max-width: ${columnBreakpoint}) {
-    ${props => !props.slideshow && `margin: 0 ${smallScreenMargins}`};
+    ${props => !props.slideshow &&`
+      margin-top: 0;
+      margin-left: ${smallScreenMargins};
+      margin-right: ${smallScreenMargins};
+    `}
 
     ${props => props.text && "flex-direction: column;"}
 
