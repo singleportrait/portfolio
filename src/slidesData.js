@@ -1,4 +1,117 @@
 export const SLIDES = [
+  /*
+  {
+    key: 'slug',
+    title: 'Project Title',
+    role: 'My Role',
+    slides: [
+      {
+        name: 'slide-image-name',
+        type: 'video', // video or image
+        src: './images/slide-name.png',
+        videoSrc: 'AWS link', // Only if it's type video
+        alt: 'Alt text'
+      },
+    ],
+    firstColumnText: [
+    ],
+    secondColumnText: [
+    ],
+  },
+  */
+  /*
+      { link: {
+        text: "",
+        target: "",
+        followWithComma: true,
+        externalLink: true,
+      } },
+      { text: "" },
+      { break: true },
+      { mobileBreak: true },
+  */
+  {
+    key: 'noname-book-club',
+    title: 'Noname Book Club',
+    role: 'Design & Development @ Noname Book Club',
+    slides: [
+      {
+        name: 'noname-book-club',
+        type: 'video', // video or image
+        src: './images/noname-book-club.png',
+        videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/noname-book-club-overview-video-compressed.mp4',
+        alt: 'Noname Book Club'
+      },
+      {
+        name: 'noname-book-club-books',
+        type: 'image', // video or image
+        src: './images/noname-book-club-books.png',
+        alt: 'Noname Book Club Books'
+      },
+      {
+        name: 'noname-book-club-bookstores',
+        type: 'image', // video or image
+        src: './images/noname-book-club-bookstores.png',
+        alt: 'Noname Book Club Bookstores'
+      },
+      {
+        name: 'noname-book-club-libraries',
+        type: 'image', // video or image
+        src: './images/noname-book-club-libraries.png',
+        alt: 'Noname Book Club Libraries'
+      },
+      {
+        name: 'noname-book-club-local-chapters',
+        type: 'image', // video or image
+        src: './images/noname-book-club-local-chapters.png',
+        alt: 'Noname Book Club Local Chapter'
+      },
+      {
+        name: 'noname-book-club-inspiration',
+        type: 'image', // video or image
+        src: './images/noname-book-club-inspiration.png',
+        alt: 'Noname Book Club Inspiration'
+      },
+    ],
+    firstColumnText: [
+      { link: {
+        text: "Noname Book Club",
+        target: "https://www.nonamebooks.com/",
+        externalLink: true
+      } },
+      { text: "is an online & IRL community dedicated to uplifting voices of people of color. They select two monthly books to read and discuss together. They also send books to incarcerated folks across the country, and put out a quarterly newsletter highlighting marginalized voices in support of abolition, reparations, food sovereignty, and other topics of resistance." }
+    ],
+    secondColumnText: [
+      { text: "The website’s goal is to highlight the most important resources they offer: learning about each" },
+      { link: {
+        text: "book selection",
+        target: "noname-book-club-books",
+        followWithComma: true
+      } },
+      { text: ", finding local black- and POC-owned" },
+      { link: {
+        text: "bookstores",
+        target: "noname-book-club-bookstores",
+        followWithComma: true
+      } },
+      { text: ", finding" },
+      { link: {
+        text: "libraries",
+        target: "noname-book-club-libraries",
+      } },
+      { text: "that carry the books, and finding" },
+      { link: {
+        text: "local chapters",
+        target: "noname-book-club-local-chapters",
+      } },
+      { text: "to join. We chose an aesthetic that" },
+      { link: {
+        text: "references",
+        target: "noname-book-club-inspiration",
+      } },
+      { text: "radical literature and educational resources, and built it nimbly in order to launch for their one-year anniversary." },
+    ]
+  },
   {
     key: 'locally-grown',
     title: 'Locally Grown',
