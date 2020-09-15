@@ -29,119 +29,48 @@ export default function SlideshowText(props) {
     setCurrentSlide(newSlideIndex);
   }
 
-  return (
-    <p>
-      { props.collectionName === "locally-grown" && props.showFirstColumn && // Locally Grown slides, first column
-        <React.Fragment>
-          <ExternalLink href="https://www.locallygrown.tv/">
-            Locally Grown
-            <ExternalLinkIcon />
-          </ExternalLink>
-          <Space />
-          is a streaming platform that gives under-represented videos and voices throughout history & culture a place to shine (think: public access television). Locally Grown is the long-dreamed vision of Jamil Baldwin and Tyler Bernard, two LA-based artists. They tapped into their rich community of creators and curators, while I built a platform for them to grow into.
-          <br /><br />
-          In building the site, we wanted an experience that let the
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('locally-grown-inspiration')}
-            selected={selectedSlideName === 'locally-grown-inspiration'}
-          >programming shine</TextLink>,
-          and a big requirement there was
-          <Space />
-        </React.Fragment>
-      }
-
-      { props.collectionName === "locally-grown" && props.showSecondColumn && // Locally Grown slides, second column
-        <React.Fragment>
-          to prevent users from controlling which videos they play—no pause, no next, no skip. It’s fundamentally a lean-back experience, which offered enjoyable technical challenges, especially on mobile. And like TV, the site is built of only a few core components: each
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('locally-grown-channel-with-mobile')}
-            selected={selectedSlideName === 'locally-grown-channel-with-mobile'}
-          >channel</TextLink>,
-          a
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('locally-grown-tv-guide-with-mobile')}
-            selected={selectedSlideName === 'locally-grown-tv-guide-with-mobile'}
-          >TV guide</TextLink>,
-          and a
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('locally-grown-channels-with-mobile')}
-            selected={selectedSlideName === 'locally-grown-channels-with-mobile'}
-          >list of channels</TextLink>.
-          <br /><br />
-          Locally Grown is an ever-morphing experiment, a resource for rare materials, and hopefully something that lasts in a new era of streaming. Enjoy!
-        </React.Fragment>
-      }
-
-
-
-      { props.collectionName === "aidin" && props.showFirstColumn && // Aidin slides, first column
-        <React.Fragment>
-          For over two years I worked with
-          <Space />
-          <ExternalLink href="https://www.myaidin.com/">
-            Aidin
-            <ExternalLinkIcon />
-          </ExternalLink>
-          , an NYC-based healthcare company, to redesign and bring product thinking to their app. Aidin helps ease patient care transitions (say, moving from a hospital to a nursing home) by bringing quality data to the moment when patients choose where they want to receive their care.
-          <br /><br />
-          Together we rebuilt Aidin from
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-before-after')}
-            selected={selectedSlideName === 'aidin-before-after'}
-          >the ground up</TextLink>,
-          rethinking how referrals are
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-sending-referral')}
-            selected={selectedSlideName === 'aidin-sending-referral'}
-          >sent</TextLink>,
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-receiving-referral')}
-            selected={selectedSlideName === 'aidin-receiving-referral'}
-          >received</TextLink>,
-          and
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-referrals-dashboard')}
-            selected={selectedSlideName === 'aidin-referrals-dashboard'}
-          >managed</TextLink>,
-          as well as exploring their future-forward
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-providers-dashboard')}
-            selected={selectedSlideName === 'aidin-providers-dashboard'}
-          >business goals</TextLink>.
-        </React.Fragment>
-      }
-
-      { props.collectionName === "aidin" && props.showSecondColumn && // Aidin slides, second column
-        <React.Fragment>
+  function ColumnText(props) {
+    const fragment = props.fragment;
+    return (
+      <>
+        { fragment.text && fragment.text }
+        { fragment.link &&
+          <>
+            <Space />
+            { fragment.link.externalLink &&
+              <ExternalLink href={fragment.link.target}>
+                {fragment.link.text}
+                <ExternalLinkIcon />
+              </ExternalLink>
+            }
+            { !fragment.link.externalLink &&
+              <TextLink
+                onClick={() => goToSlideByName(fragment.link.target)}
+                selected={selectedSlideName === fragment.link.target}
+              >{fragment.link.text}</TextLink>
+            }
+            { !fragment.link.followWithComma && <Space/> }
+          </>
+        }
+        { fragment.break && <><br /><br /></> }
+        { fragment.mobileBreak &&
           <MediaQuery maxWidth={columnBreakpoint}>
             <br /><br />
           </MediaQuery>
-          Aidin’s users are hospital case managers and provider intake coordinators that use Aidin all-day, every day, so it was important to do extensive
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-user-testing')}
-            selected={selectedSlideName === 'aidin-user-testing'}
-          >user testing</TextLink>,
-          interviewing, demoing, and beta testing of our proposed solutions.
-          <br /><br />
-          After setting the vision, we moved into rebuilding the app. I managed our
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('aidin-project-management')}
-            selected={selectedSlideName === 'aidin-project-management'}
-          >roadmap</TextLink>,
-          as well as our engineering team, providing project management, code review, and QA testing, while managing the full Aidin team’s evolving requirements and needs with agile development.
-        </React.Fragment>
-      }
+        }
+      </>
+    );
+  }
+
+  return (
+    <p>
+      {props.firstColumn && props.firstColumn.map((fragment, key) =>
+        <ColumnText fragment={fragment} key={key} />
+      )}
+
+      {props.secondColumn && props.secondColumn.map((fragment, key) =>
+        <ColumnText fragment={fragment} key={key} />
+      )}
 
 
 

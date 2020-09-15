@@ -161,6 +161,7 @@ export default function Slideshow(props) {
               showFirstColumn
               collectionName={props.collection.key}
               slides={props.collection.slides}
+              firstColumn={props.collection.firstColumnText}
               currentSlide={[currentSlide, setCurrentSlide]}
               setEndcapAnimation={setEndcapAnimation}
             />
@@ -171,6 +172,8 @@ export default function Slideshow(props) {
               showSecondColumn
               collectionName={props.collection.key}
               slides={props.collection.slides}
+              firstColumn={props.collection.firstColumnText}
+              secondColumn={props.collection.secondColumnText}
               currentSlide={[currentSlide, setCurrentSlide]}
               setEndcapAnimation={setEndcapAnimation}
             />
@@ -183,6 +186,7 @@ export default function Slideshow(props) {
               showSecondColumn
               collectionName={props.collection.key}
               slides={props.collection.slides}
+              secondColumn={props.collection.secondColumnText}
               currentSlide={[currentSlide, setCurrentSlide]}
               setEndcapAnimation={setEndcapAnimation}
             />
