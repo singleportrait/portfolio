@@ -89,17 +89,6 @@ export const SLIDES = [
       } },
       { text: "shows career highlights, and helps to make the work a bit more personal." },
     ],
-  /*
-      { link: {
-        text: "",
-        target: "",
-        followWithComma: true,
-        externalLink: true,
-      } },
-      { text: "" },
-      { break: true },
-      { mobileBreak: true },
-  */
   },
   {
     key: 'noname-book-club',
@@ -108,32 +97,32 @@ export const SLIDES = [
     slides: [
       {
         name: 'noname-book-club',
-        type: 'video', // video or image
+        type: 'video',
         src: './images/noname-book-club.png',
         videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/noname-book-club-overview-video-compressed.mp4',
         alt: 'Noname Book Club'
       },
       {
         name: 'noname-book-club-books',
-        type: 'image', // video or image
+        type: 'image',
         src: './images/noname-book-club-books.png',
         alt: 'Noname Book Club Books'
       },
       {
         name: 'noname-book-club-bookstores',
-        type: 'image', // video or image
+        type: 'image',
         src: './images/noname-book-club-bookstores.png',
         alt: 'Noname Book Club Bookstores'
       },
       {
         name: 'noname-book-club-libraries',
-        type: 'image', // video or image
+        type: 'image',
         src: './images/noname-book-club-libraries.png',
         alt: 'Noname Book Club Libraries'
       },
       {
         name: 'noname-book-club-local-chapters',
-        type: 'image', // video or image
+        type: 'image',
         src: './images/noname-book-club-local-chapters.png',
         alt: 'Noname Book Club Local Chapter'
       },
