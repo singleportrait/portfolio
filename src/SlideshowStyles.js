@@ -115,7 +115,7 @@ const sharedSlideVideoImageStyles = `
 export const SlideVideo = styled(SlideImage)`
   ${sharedSlideVideoImageStyles}
 
-  top: ${(40 / 626) * 100 + "%"}; // Percentage down from top of browser frame
+  top: ${(42 / 626) * 100 + "%"}; // Percentage down from top of browser frame
   z-index: 1;
 `;
 

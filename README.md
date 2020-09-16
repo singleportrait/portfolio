@@ -15,7 +15,12 @@ Use Edwin's FFMpeg compression script for the videos, but add `faststart` for mo
 
 Videos should be a ratio of 2556x1608 (1:1.59) to fit inside the browser frame.
 
+There is a shell script in this directory that you can run from the same folder the videos are in, to keep you from having to type the full ffmpeg options every time.
+
 ```sh
+./ffmpeg-video-compression.sh noname-book-club.mp4
+
+# Full script, for reference:
 ffmpeg -i <input-filename.mp4> -vcodec h264 -strict -2 -an -movflags faststart <output-filename.mp4>
 ```
 
