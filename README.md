@@ -9,6 +9,9 @@ pngquant <oldfile.png>
 
 # If you have a bunch of files that start with the same prefix, you can use, for instance:
 pngquant locally-grown-*
+
+# If you want to overwrite the original file with the new one, you can do:
+pngquant -f --ext .png locally-grown-*
 ```
 
 Use Edwin's FFMpeg compression script for the videos, but add `faststart` for mobile loading (help thread [here](https://stackoverflow.com/questions/10328401/html5-how-to-stream-large-mp4-files):
