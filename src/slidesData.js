@@ -31,6 +31,77 @@ export const SLIDES = [
       { mobileBreak: true },
   */
   {
+    key: 'lucia-kempkes',
+    title: 'Lucia Kempkes',
+    role: 'Design & Development',
+    slides: [
+      {
+        name: 'lucia-kempkes-overview',
+        type: 'video',
+        src: './images/lucia-kempkes-overview.png',
+        videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/lucia-kempkes-overview-video-compressed.mp4',
+        alt: 'Lucia Kempkes Portfolio'
+      },
+      {
+        name: 'lucia-kempkes-homepage',
+        type: 'image',
+        src: './images/lucia-kempkes-homepage.png',
+        alt: 'Lucia Kempkes Homepage'
+      },
+      {
+        name: 'lucia-kempkes-series-page',
+        type: 'image',
+        src: './images/lucia-kempkes-series-page.png',
+        alt: 'Lucia Kempkes Series Pages'
+      },
+      {
+        name: 'lucia-kempkes-about-page',
+        type: 'image',
+        src: './images/lucia-kempkes-about-page.png',
+        alt: 'Lucia Kempkes About Page'
+      },
+    ],
+    firstColumnText: [
+      { link: {
+        text: "Lucia Kempkes",
+        target: "lucia-kempkes-overview",
+        // externalLink: true, // Once site launches
+      } },
+      { text: "is a Berlin-based artist whose work often deals in landscape, but spans a variety of media to explore our relationships to the earth." },
+      { break: true },
+      { text: "She often works in shades of black and white, so we brought in vibrant color to contrast the work. Her work is" },
+    ],
+    secondColumnText: [
+      { text: "also tactile and textured, so we used a bold grid to provide elegant structure. The" },
+      { link: {
+        text: "homepage",
+        target: "lucia-kempkes-homepage",
+      } },
+      { text: "features each of her recent project cycles, while the" },
+      { link: {
+        text: "individual project pages",
+        target: "lucia-kempkes-series-page",
+      } },
+      { text: "highlight details of her work and installations. Finally, her" },
+      { link: {
+        text: "about page",
+        target: "lucia-kempkes-about-page",
+      } },
+      { text: "shows career highlights, and helps to make the work a bit more personal." },
+    ],
+  /*
+      { link: {
+        text: "",
+        target: "",
+        followWithComma: true,
+        externalLink: true,
+      } },
+      { text: "" },
+      { break: true },
+      { mobileBreak: true },
+  */
+  },
+  {
     key: 'noname-book-club',
     title: 'Noname Book Club',
     role: 'Design & Development @ Noname Book Club',
