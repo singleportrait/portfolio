@@ -168,7 +168,7 @@ export const SLIDES = [
     title: 'Aidin',
     role: 'Head of Product @ Aidin',
     slides: [
-      { name: 'aidin-overview-video', type: 'video', src: './images/aidin-sending-dashboard-zoomed.png', videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/aidin-overview-video-compressed.mp4', alt: 'Aidin Dashboard' },
+      { name: 'aidin-overview-video', type: 'video', src: './images/aidin-sending-dashboard-overview.png', videoSrc: 'https://js-portfolio-2017.s3.amazonaws.com/aidin-overview-video-compressed.mp4', alt: 'Aidin Dashboard' },
       { name: 'aidin-before-after', type: 'image', src: './images/aidin-before-after.png', alt: 'Aidin Before & After' },
       { name: 'aidin-sending-referral', type: 'image', src: './images/aidin-sending-referral.png', alt: 'Sending Aidin Referrals' },
       { name: 'aidin-receiving-referral', type: 'image', src: './images/aidin-receiving-referral.png', alt: 'Receiving Aidin Referrals' },
