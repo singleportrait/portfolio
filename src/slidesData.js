@@ -64,12 +64,12 @@ export const SLIDES = [
     firstColumnText: [
       { link: {
         text: "Lucia Kempkes",
-        target: "lucia-kempkes-overview",
-        // externalLink: true, // Once site launches
+        target: "https://luciakempkes.com/",
+        externalLink: true,
       } },
       { text: "is a Berlin-based artist whose work often deals in landscape, but spans a variety of media to explore our relationships to the earth." },
       { break: true },
-      { text: "She often works in shades of black and white, so we brought in vibrant color to contrast the work. Her work is" },
+      { text: "She often works in shades of black and white, so we brought in vibrant color to contrast the work. Her work is " },
     ],
     secondColumnText: [
       { text: "also tactile and textured, so we used a bold grid to provide elegant structure. The" },
@@ -315,15 +315,45 @@ export const SLIDES = [
     ],
   },
   {
-    key: 'freelance',
-    title: 'Freelance',
+    key: 'table-manners',
+    title: 'Table Manners',
     role: 'Freelancer @ Me',
     slides: [
-      { name: 'freelance-table-manners', type:  'image', src: './images/freelance-table_manners.png', alt: 'Table Manners' },
-      { name: 'freelance-mapsense', type: 'image', src: './images/freelance-mapsense.png', alt: 'Mapsense' },
-      { name: 'freelance-quinciple', type: 'image', src: './images/freelance-quinciple.png', alt: 'Quinciple' },
-      { name: 'freelance-clementine', type: 'image', src: './images/freelance-clementine.png', alt: 'Clementine' },
-      { name: 'freelance-hapide', type: 'image', src: './images/freelance-hapide.png', alt: 'Hapide' } // TODO: Remove here & in the text
+      {
+        name: 'table-manners-homepage',
+        type: 'image',
+        src: './images/table-manners-homepage.png',
+        alt: 'Table Manners Homepage'
+      },
+      {
+        name: 'table-manners-quiz',
+        type: 'image',
+        src: './images/table-manners-quiz.png',
+        alt: 'Table Manners Quiz'
+      },
+    ],
+    firstColumnText: [
+      { text: "Before Genius I freelanced, working on my own projects and with various companies in the U.S. and Europe. One of my favorites was a personal site," },
+      { link:
+        {
+          text: "Table Manners",
+          target: "http://www.tablemanners.us/",
+          followWithComma: true,
+          externalLink: true,
+        }
+      },
+      { text: ", " },
+    ],
+    secondColumnText: [
+      { text: "which brought a 30-year-old text on etiquette and dining to the internet, complete with" },
+      { link:
+        {
+          text: "self-quiz",
+          target: "table-manners-quiz",
+          followWithComma: true,
+        }
+      },
+      { text: "." },
     ],
   },
   {

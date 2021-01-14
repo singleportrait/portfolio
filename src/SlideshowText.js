@@ -130,60 +130,6 @@ export default function SlideshowText(props) {
 
 
 
-      { props.collectionName === "freelance" && props.showFirstColumn && // Freelance slides, first column
-        <React.Fragment>
-          Before Genius I spent time freelancing, working on my own projects and with various companies in the U.S. and Europe. A personal site I enjoyed making was
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('freelance-table-manners')}
-            selected={selectedSlideName === 'freelance-table-manners'}
-          >Table Manners</TextLink>,
-          <Space />
-          which brought a 30-year-old text on etiquette and dining to the internet, complete with
-          <Space />
-          <ExternalLink href="http://tablemanners.us">
-            self-quiz
-            <ExternalLinkIcon />
-          </ExternalLink>.
-          <Space />
-          And, some of the more exciting external projects I worked on were:
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('freelance-mapsense')}
-            selected={selectedSlideName === 'freelance-mapsense'}
-          >Mapsense</TextLink>,
-          <Space />
-          an innovative way of using maths
-          <Space />
-        </React.Fragment>
-      }
-
-      { props.collectionName === "freelance" && props.showSecondColumn && // Freelance slides, second column
-        <React.Fragment>
-          instead of images to provide maps online (since bought by Apple lol);
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('freelance-quinciple')}
-            selected={selectedSlideName === 'freelance-quinciple'}
-          >Quinciple</TextLink>,
-          a local service that delivers food directly from farmers' markets;
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('freelance-clementine')}
-            selected={selectedSlideName === 'freelance-clementine'}
-          >Clementine Bakery</TextLink>,
-          the first website for a friend's amazing vegan bakery, including cake orders and customization; and
-          <Space />
-          <TextLink
-            onClick={() => goToSlideByName('freelance-hapide')}
-            selected={selectedSlideName === 'freelance-hapide'}
-          >Hapide</TextLink>,
-          an accelerator backed by the UN to help young Albanians create startups.
-        </React.Fragment>
-      }
-
-
-
       { props.collectionName === "refinery29" && props.showFirstColumn && // Refinery29 slides, first column
         <React.Fragment>
           After moving to New York I began interning at
