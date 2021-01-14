@@ -23,7 +23,7 @@ export const SLIDES = [
       { link: {
         text: "",
         target: "",
-        followWithComma: true,
+        noSpaceAfter: true,
         externalLink: true,
       } },
       { text: "" },
@@ -146,13 +146,13 @@ export const SLIDES = [
       { link: {
         text: "book selection",
         target: "noname-book-club-books",
-        followWithComma: true
+        noSpaceAfter: true
       } },
       { text: ", finding local black- and POC-owned" },
       { link: {
         text: "bookstores",
         target: "noname-book-club-bookstores",
-        followWithComma: true
+        noSpaceAfter: true
       } },
       { text: ", finding" },
       { link: {
@@ -204,19 +204,19 @@ export const SLIDES = [
       { link: {
         text: "channel",
         target: "locally-grown-channel-with-mobile",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", a" },
       { link: {
         text: "TV Guide",
         target: "locally-grown-tv-guide-with-mobile",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", and a" },
       { link: {
         text: "list of channels",
         target: "locally-grown-channels-with-mobile",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: "." },
       { break: true },
@@ -243,7 +243,7 @@ export const SLIDES = [
       { link: {
         text: "Aidin",
         target: "https://www.myaidin.com/",
-        followWithComma: true,
+        noSpaceAfter: true,
         externalLink: true,
       } },
       { text: ", an NYC-based healthcare company, to redesign and bring product thinking to their app. Aidin helps ease patient care transitions (say, moving from a hospital to a nursing home) by bringing quality data to the moment when patients choose where they want to receive their care." },
@@ -252,31 +252,31 @@ export const SLIDES = [
       { link: {
         text: "the ground up",
         target: "aidin-before-after",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", rethinking how referrals are" },
       { link: {
         text: "sent",
         target: "aidin-sending-referral",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", " },
       { link: {
         text: "received",
         target: "aidin-receiving-referral",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", and" },
       { link: {
         text: "managed",
         target: "aidin-referrals-dashboard",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", as well as exploring their future-forward" },
       { link: {
         text: "business goals",
         target: "aidin-providers-dashboard",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: "." },
     ],
@@ -286,7 +286,7 @@ export const SLIDES = [
       { link: {
         text: "user testing",
         target: "aidin-user-testing",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", interviewing, demoing, and beta testing of our proposed solutions." },
       { break: true },
@@ -294,7 +294,7 @@ export const SLIDES = [
       { link: {
         text: "roadmap",
         target: "aidin-project-management",
-        followWithComma: true,
+        noSpaceAfter: true,
       } },
       { text: ", as well as our engineering team, providing project management, code review, and QA testing, while managing the full Aidin team’s evolving requirements and needs with agile development." },
     ]
@@ -338,7 +338,7 @@ export const SLIDES = [
         {
           text: "Table Manners",
           target: "http://www.tablemanners.us/",
-          followWithComma: true,
+          noSpaceAfter: true,
           externalLink: true,
         }
       },
@@ -350,7 +350,7 @@ export const SLIDES = [
         {
           text: "self-quiz",
           target: "table-manners-quiz",
-          followWithComma: true,
+          noSpaceAfter: true,
         }
       },
       { text: "." },

@@ -49,7 +49,7 @@ export default function SlideshowText(props) {
                 selected={selectedSlideName === fragment.link.target}
               >{fragment.link.text}</TextLink>
             }
-            { !fragment.link.followWithComma && <Space/> }
+            { !fragment.link.noSpaceAfter && <Space/> }
           </>
         }
         { fragment.break && <><br /><br /></> }
