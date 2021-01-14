@@ -27,3 +27,6 @@ yarn-error.log*
 
 # package lock file
 package-lock.json
+
+# generated eslint cache file from create react app, react-scripts 4.0.1
+.eslintcache
