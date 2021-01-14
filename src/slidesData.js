@@ -142,6 +142,7 @@ export const SLIDES = [
       { text: "is an online & IRL community dedicated to uplifting voices of people of color. They select two monthly books to read and discuss together. They also send books to incarcerated folks across the country, and put out a quarterly newsletter highlighting marginalized voices in support of abolition, reparations, food sovereignty, and other topics of resistance." }
     ],
     secondColumnText: [
+      { mobileBreak: true },
       { text: "The website’s goal is to highlight the most important resources they offer: learning about each" },
       { link: {
         text: "book selection",
