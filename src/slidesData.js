@@ -338,7 +338,7 @@ export const SLIDES = [
       { link:
         {
           text: "Table Manners",
-          target: "http://www.tablemanners.us/",
+          target: "https://www.tablemanners.us/",
           noSpaceAfter: true,
           externalLink: true,
         }
