@@ -86,7 +86,7 @@ export default function Slideshow(props) {
 
   return (
     <React.Fragment>
-      <Section header>
+      <Section header id={props.collection.key}>
         <h2>{ props.collection.title }</h2>
       </Section>
 

@@ -20,7 +20,8 @@ export const Section = styled.section`
   `}
 
   ${props => props.header && `
-    margin-top: 2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
     margin-bottom: .5rem;
   `}
 
