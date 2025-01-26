@@ -222,6 +222,112 @@ export const SLIDES = [
     ],
   },
   {
+    key: "point-me",
+    title: "point.me",
+    role: "Design & Development @ point.me",
+    slides: [
+      {
+        name: "point-me-overview",
+        type: "video",
+        src: "./images/point-me/point-me-overview.png",
+        videoSrc:
+          "https://js-portfolio-2017.s3.amazonaws.com/point-me-overview-video-compressed.mp4",
+        alt: "point.me",
+      },
+      {
+        name: "point-me-homepage",
+        type: "image",
+        src: "./images/point-me/point-me-homepage.png",
+        alt: "point.me Homepage",
+      },
+      {
+        name: "point-me-search-results",
+        type: "image",
+        src: "./images/point-me/point-me-booking-options.png",
+        alt: "point.me Booking Options",
+      },
+      {
+        name: "point-me-booking-instructions",
+        type: "image",
+        src: "./images/point-me/point-me-booking-instructions.png",
+        alt: "point.me Booking Instructions",
+      },
+      {
+        name: "point-me-figma",
+        type: "image",
+        src: "./images/point-me/point-me-figma.png",
+        alt: "point.me Figma Components",
+      },
+      {
+        name: "point-me-storybook",
+        type: "image",
+        src: "./images/point-me/point-me-storybook.png",
+        alt: "point.me Storybook Components",
+      },
+    ],
+    firstColumnText: [
+      {
+        text: "I’ve been working with",
+      },
+      {
+        link: {
+          text: "point.me",
+          target: "https://point.me",
+          noSpaceAfter: true,
+          externalLink: true,
+        },
+      },
+      {
+        text: ", a credit card points travel redemption tool, for the last several years. I work with them in a consultant role, and have been working with them since before they had their own tech or design teams. I was brought on to help bring their rough prototypes into fully-fledged product designs, as well as turn a half-completed Angular app into a state-of-the-art Next.js React app.",
+      },
+    ],
+    secondColumnText: [
+      {
+        mobileBreak: true,
+      },
+      {
+        text: "We worked around-the-clock to launch their MVP after several quick months, and they’ve gone on to hire full in-house teams that I continue to support. The app lets you",
+      },
+      {
+        link: {
+          text: "search for flights",
+          target: "point-me-search-results",
+        },
+      },
+      {
+        text: "using your own credit card accounts, and then",
+      },
+      {
+        link: {
+          text: "teaches you how to redeem them",
+          target: "point-me-booking-instructions",
+        },
+      },
+      {
+        text: "through opaque means for great value. We’ve built out a robust component library in the",
+      },
+      {
+        link: {
+          text: "design files",
+          target: "point-me-figma",
+        },
+      },
+      {
+        text: "as well as in",
+      },
+      {
+        link: {
+          text: "Storybook",
+          target: "point-me-storybook",
+          noSpaceAfter: true,
+        },
+      },
+      {
+        text: ", and continue to improve handoff between teams as well as UX patterns.",
+      },
+    ],
+  },
+  {
     key: "noname-book-club",
     title: "Noname Book Club",
     role: "Design & Development @ Noname Book Club",
