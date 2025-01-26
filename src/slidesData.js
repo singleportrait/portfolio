@@ -19,17 +19,131 @@ export const SLIDES = [
     ],
   },
   */
-  /*
-      { link: {
-        text: "",
-        target: "",
-        noSpaceAfter: true,
-        externalLink: true,
-      } },
-      { text: "" },
-      { break: true },
+  // {
+  //   link: {
+  //     text: "",
+  //     target: "",
+  //     noSpaceAfter: true,
+  //     externalLink: true,
+  //   },
+  // },
+  // { text: "" },
+  // { break: true },
+  // { mobileBreak: true },
+
+  {
+    key: "tables-for-two",
+    title: "Tables for Two",
+    role: "Design & Development",
+    slides: [
+      {
+        name: "tables-for-two-overview",
+        type: "video",
+        src: "./images/tables-for-two-overview.png",
+        videoSrc:
+          "https://js-portfolio-2017.s3.amazonaws.com/tables-for-two-overview-video-compressed.mp4",
+        alt: "Tables for Two Restaurant Review App",
+      },
+      {
+        name: "tables-for-two-homepage",
+        type: "image",
+        src: "./images/tables-for-two-homepage.png",
+        alt: "Tables for Two Homepage",
+      },
+      {
+        name: "tables-for-two-restaurant",
+        type: "image",
+        src: "./images/tables-for-two-restaurant.png",
+        alt: "Tables for Two Restaurant",
+      },
+      {
+        name: "tables-for-two-list",
+        type: "image",
+        src: "./images/tables-for-two-list.png",
+        alt: "Tables for Two List View",
+      },
+      {
+        name: "tables-for-two-admin",
+        type: "image",
+        src: "./images/tables-for-two-admin.png",
+        alt: "Tables for Two Admin",
+      },
+      {
+        name: "tables-for-two-github-action",
+        type: "image",
+        src: "./images/tables-for-two-github-action.png",
+        alt: "Tables for Two Github Action",
+      },
+    ],
+    firstColumnText: [
+      {
+        text: "This is a personal project I’d long wanted to make.",
+      },
+      {
+        link: {
+          text: "Tables for Two",
+          target: "https://tablesfortwo.nyc",
+          externalLink: true,
+        },
+      },
+      {
+        text: "is a map app that gathers all of the New Yorker Magazine’s weekly",
+      },
+      {
+        link: {
+          text: "restaurant reviews",
+          target: "https://www.newyorker.com/magazine/tables-for-two",
+          externalLink: true,
+        },
+      },
+      {
+        text: "into one handy place. I’ve always enjoyed their reviews: unexpected picks, open-mindedness, and often a bit of cheeky NYC attitude. But I wanted a map to go along with them so they’d be easier to reference. ",
+      },
+    ],
+    secondColumnText: [
       { mobileBreak: true },
-  */
+      {
+        text: "The app is simple; open a restaurant and you get a",
+      },
+      {
+        link: {
+          text: "preview of the review",
+          target: "tables-for-two-restaurant",
+          noSpaceAfter: true,
+        },
+      },
+      {
+        text: ", in addition to the restaurant’s Google reviews and the restaurant’s website. Aside from that you can view a",
+      },
+      {
+        link: {
+          text: "chronological list",
+          target: "tables-for-two-list",
+        },
+      },
+      {
+        text: "of all recent reviews. I built a simple",
+      },
+      {
+        link: {
+          text: "admin",
+          target: "tables-for-two-admin",
+        },
+      },
+      {
+        text: "that fetches from Google, and wrote a",
+      },
+      {
+        link: {
+          text: "weekly script",
+          target: "tables-for-two-github-action",
+        },
+      },
+      {
+        text: "that fetches the latest reviews, so I don’t have to remember to do it myself. Happy eating!",
+      },
+    ],
+  },
   {
     key: 'lucia-kempkes',
     title: 'Lucia Kempkes',
