@@ -39,7 +39,7 @@ export const SLIDES = [
       {
         name: "tables-for-two-overview",
         type: "video",
-        src: "./images/tables-for-two-overview.png",
+        src: "./images/tables-for-two/tables-for-two-overview.png",
         videoSrc:
           "https://js-portfolio-2017.s3.amazonaws.com/tables-for-two-overview-video-compressed.mp4",
         alt: "Tables for Two Restaurant Review App",
@@ -47,31 +47,31 @@ export const SLIDES = [
       {
         name: "tables-for-two-homepage",
         type: "image",
-        src: "./images/tables-for-two-homepage.png",
+        src: "./images/tables-for-two/tables-for-two-homepage.png",
         alt: "Tables for Two Homepage",
       },
       {
         name: "tables-for-two-restaurant",
         type: "image",
-        src: "./images/tables-for-two-restaurant.png",
+        src: "./images/tables-for-two/tables-for-two-restaurant.png",
         alt: "Tables for Two Restaurant",
       },
       {
         name: "tables-for-two-list",
         type: "image",
-        src: "./images/tables-for-two-list.png",
+        src: "./images/tables-for-two/tables-for-two-list.png",
         alt: "Tables for Two List View",
       },
       {
         name: "tables-for-two-admin",
         type: "image",
-        src: "./images/tables-for-two-admin.png",
+        src: "./images/tables-for-two/tables-for-two-admin.png",
         alt: "Tables for Two Admin",
       },
       {
         name: "tables-for-two-github-action",
         type: "image",
-        src: "./images/tables-for-two-github-action.png",
+        src: "./images/tables-for-two/tables-for-two-github-action.png",
         alt: "Tables for Two Github Action",
       },
     ],
@@ -152,7 +152,7 @@ export const SLIDES = [
       {
         name: "lucia-kempkes-overview",
         type: "video",
-        src: "./images/lucia-kempkes-overview.png",
+        src: "./images/lucia-kempkes/lucia-kempkes-overview.png",
         videoSrc:
           "https://js-portfolio-2017.s3.amazonaws.com/lucia-kempkes-overview-video-compressed.mp4",
         alt: "Lucia Kempkes Portfolio",
@@ -160,19 +160,19 @@ export const SLIDES = [
       {
         name: "lucia-kempkes-homepage",
         type: "image",
-        src: "./images/lucia-kempkes-homepage.png",
+        src: "./images/lucia-kempkes/lucia-kempkes-homepage.png",
         alt: "Lucia Kempkes Homepage",
       },
       {
         name: "lucia-kempkes-series-page",
         type: "image",
-        src: "./images/lucia-kempkes-series-page.png",
+        src: "./images/lucia-kempkes/lucia-kempkes-series-page.png",
         alt: "Lucia Kempkes Series Pages",
       },
       {
         name: "lucia-kempkes-about-page",
         type: "image",
-        src: "./images/lucia-kempkes-about-page.png",
+        src: "./images/lucia-kempkes/lucia-kempkes-about-page.png",
         alt: "Lucia Kempkes About Page",
       },
     ],
@@ -229,7 +229,7 @@ export const SLIDES = [
       {
         name: "noname-book-club",
         type: "video",
-        src: "./images/noname-book-club.png",
+        src: "./images/noname-book-club/noname-book-club.png",
         videoSrc:
           "https://js-portfolio-2017.s3.amazonaws.com/noname-book-club-overview-video-compressed.mp4",
         alt: "Noname Book Club",
@@ -237,31 +237,31 @@ export const SLIDES = [
       {
         name: "noname-book-club-books",
         type: "image",
-        src: "./images/noname-book-club-books.png",
+        src: "./images/noname-book-club/noname-book-club-books.png",
         alt: "Noname Book Club Books",
       },
       {
         name: "noname-book-club-bookstores",
         type: "image",
-        src: "./images/noname-book-club-bookstores.png",
+        src: "./images/noname-book-club/noname-book-club-bookstores.png",
         alt: "Noname Book Club Bookstores",
       },
       {
         name: "noname-book-club-libraries",
         type: "image",
-        src: "./images/noname-book-club-libraries.png",
+        src: "./images/noname-book-club/noname-book-club-libraries.png",
         alt: "Noname Book Club Libraries",
       },
       {
         name: "noname-book-club-local-chapters",
         type: "image",
-        src: "./images/noname-book-club-local-chapters.png",
+        src: "./images/noname-book-club/noname-book-club-local-chapters.png",
         alt: "Noname Book Club Local Chapter",
       },
       {
         name: "noname-book-club-inspiration",
         type: "image", // video or image
-        src: "./images/noname-book-club-inspiration.png",
+        src: "./images/noname-book-club/noname-book-club-inspiration.png",
         alt: "Noname Book Club Inspiration",
       },
     ],
@@ -331,7 +331,7 @@ export const SLIDES = [
       {
         name: "locally-grown-channel",
         type: "video",
-        src: "./images/locally-grown-channel.png",
+        src: "./images/locally-grown/locally-grown-channel.png",
         videoSrc:
           "https://js-portfolio-2017.s3.amazonaws.com/locally-grown-overview-video-compressed.mp4",
         alt: "Locally Grown Channel",
@@ -339,28 +339,27 @@ export const SLIDES = [
       {
         name: "locally-grown-inspiration",
         type: "image",
-        src: "./images/locally-grown-inspiration.png",
+        src: "./images/locally-grown/locally-grown-inspiration.png",
         alt: "Locally Grown Inspiration",
       },
       {
         name: "locally-grown-channel-with-mobile",
         type: "image",
-        src: "./images/locally-grown-channel-with-mobile.png",
+        src: "./images/locally-grown/locally-grown-channel-with-mobile.png",
         alt: "Locally Grown Channel with Mobile",
       },
       {
         name: "locally-grown-tv-guide-with-mobile",
         type: "image",
-        src: "./images/locally-grown-tv-guide-with-mobile.png",
+        src: "./images/locally-grown/locally-grown-tv-guide-with-mobile.png",
         alt: "Locally Grown TV Guide with Mobile",
       },
       {
         name: "locally-grown-channels-with-mobile",
         type: "image",
-        src: "./images/locally-grown-channels-with-mobile.png",
+        src: "./images/locally-grown/locally-grown-channels-with-mobile.png",
         alt: "Locally Grown Channels Index with Mobile",
       },
-      // { name: 'locally-grown-', type: 'image', src: './images/locally-grown-.png', alt: 'Locally Grown' },
     ],
     firstColumnText: [
       {
@@ -425,7 +424,7 @@ export const SLIDES = [
       {
         name: "aidin-overview-video",
         type: "video",
-        src: "./images/aidin-sending-dashboard-overview.png",
+        src: "./images/aidin/aidin-sending-dashboard-overview.png",
         videoSrc:
           "https://js-portfolio-2017.s3.amazonaws.com/aidin-overview-video-compressed.mp4",
         alt: "Aidin Dashboard",
@@ -433,46 +432,45 @@ export const SLIDES = [
       {
         name: "aidin-before-after",
         type: "image",
-        src: "./images/aidin-before-after.png",
+        src: "./images/aidin/aidin-before-after.png",
         alt: "Aidin Before & After",
       },
       {
         name: "aidin-sending-referral",
         type: "image",
-        src: "./images/aidin-sending-referral.png",
+        src: "./images/aidin/aidin-sending-referral.png",
         alt: "Sending Aidin Referrals",
       },
       {
         name: "aidin-receiving-referral",
         type: "image",
-        src: "./images/aidin-receiving-referral.png",
+        src: "./images/aidin/aidin-receiving-referral.png",
         alt: "Receiving Aidin Referrals",
       },
       {
         name: "aidin-referrals-dashboard",
         type: "image",
-        src: "./images/aidin-referrals-dashboard.png",
+        src: "./images/aidin/aidin-referrals-dashboard.png",
         alt: "Aidin Referrals Dashboard",
       },
       {
         name: "aidin-providers-dashboard",
         type: "image",
-        src: "./images/aidin-providers-dashboard.png",
+        src: "./images/aidin/aidin-providers-dashboard.png",
         alt: "Aidin Providers Dashboard",
       },
       {
         name: "aidin-user-testing",
         type: "image",
-        src: "./images/aidin-user-testing.png",
+        src: "./images/aidin/aidin-user-testing.png",
         alt: "Aidin User Testing Documentation",
       },
       {
         name: "aidin-project-management",
         type: "image",
-        src: "./images/aidin-project-management.png",
+        src: "./images/aidin/aidin-project-management.png",
         alt: "Aidin Product Management",
       },
-      // { name: 'aidin-', type: 'image', src: './images/aidin-.png' },
     ],
     firstColumnText: [
       { text: "For over two years I worked with" },
@@ -569,7 +567,7 @@ export const SLIDES = [
       {
         name: "genius-video",
         type: "video",
-        src: "./images/genius-homepage-after-matches-video.png",
+        src: "./images/genius/genius-homepage-after-matches-video.png",
         videoSrc:
           "https://s3.amazonaws.com/js-portfolio-2017/genius-overview-video-compressed.mp4",
         alt: "Genius Homepage Redesign",
@@ -577,43 +575,43 @@ export const SLIDES = [
       {
         name: "genius-web-annotator",
         type: "image",
-        src: "./images/genius-web-annotator-with-browser.gif",
+        src: "./images/genius/genius-web-annotator-with-browser.gif",
         alt: "Genius Web Annotator",
       },
       {
         name: "genius-song-after",
         type: "image",
-        src: "./images/genius-song-after.png",
+        src: "./images/genius/genius-song-after.png",
         alt: "Genius Song Page Redesign",
       },
       {
         name: "genius-song-mobile",
         type: "image",
-        src: "./images/genius-song-mobile.png",
+        src: "./images/genius/genius-song-mobile.png",
         alt: "Genius Mobile Site Before & After",
       },
       {
         name: "genius-artist-after",
         type: "image",
-        src: "./images/genius-artist-after.png",
+        src: "./images/genius/genius-artist-after.png",
         alt: "Genius Artist Page Redesign",
       },
       {
         name: "genius-homepage-after",
         type: "image",
-        src: "./images/genius-homepage-after-matches-video.png",
+        src: "./images/genius/genius-homepage-after-matches-video.png",
         alt: "Genius Homepage Redesign",
       },
       {
         name: "genius-article-after",
         type: "image",
-        src: "./images/genius-article-after.png",
+        src: "./images/genius/genius-article-after.png",
         alt: "Genius Articles",
       },
       {
         name: "genius-marketing",
         type: "image",
-        src: "./images/genius-marketing.png",
+        src: "./images/genius/genius-marketing.png",
         alt: "Genius Marketing Materials",
       },
     ],
@@ -626,13 +624,13 @@ export const SLIDES = [
       {
         name: "table-manners-homepage",
         type: "image",
-        src: "./images/table-manners-homepage.png",
+        src: "./images/table-manners/table-manners-homepage.png",
         alt: "Table Manners Homepage",
       },
       {
         name: "table-manners-quiz",
         type: "image",
-        src: "./images/table-manners-quiz.png",
+        src: "./images/table-manners/table-manners-quiz.png",
         alt: "Table Manners Quiz",
       },
     ],
@@ -672,7 +670,7 @@ export const SLIDES = [
       {
         name: "refinery29-video",
         type: "video",
-        src: "./images/refinery29-homepage-matches-video.png",
+        src: "./images/refinery29/refinery29-homepage-matches-video.png",
         videoSrc:
           "https://s3.amazonaws.com/js-portfolio-2017/refinery29-overview-video-compressed.mp4",
         alt: "Refinery29 Homepage",
@@ -680,19 +678,19 @@ export const SLIDES = [
       {
         name: "refinery29-street-style",
         type: "image",
-        src: "./images/refinery29-street_style.png",
+        src: "./images/refinery29/refinery29-street_style.png",
         alt: "Refinery29 Street Style Landing Page",
       },
       {
         name: "refinery29-weddings",
         type: "image",
-        src: "./images/refinery29-weddings.png",
+        src: "./images/refinery29/refinery29-weddings.png",
         alt: "Refinery29 Weddings Landing Page",
       },
       {
         name: "refinery29-festival-tracker",
         type: "image",
-        src: "./images/refinery29-festival_tracker.png",
+        src: "./images/refinery29/refinery29-festival_tracker.png",
         alt: "Refinery29 Festival Tracker Minisite",
       },
     ],
