@@ -328,6 +328,90 @@ export const SLIDES = [
     ],
   },
   {
+    key: "chann3l",
+    title: "CHANN3L",
+    role: "Design & Development @ CHANN3L",
+    slides: [
+      {
+        name: "chann3l-homepage",
+        type: "image",
+        src: "./images/chann3l/chann3l-homepage.png",
+        alt: "CHANN3L",
+      },
+      {
+        name: "chann3l-readings",
+        type: "image",
+        src: "./images/chann3l/chann3l-readings.png",
+        alt: "CHANN3L Tarot Readings",
+      },
+      {
+        name: "chann3l-artists",
+        type: "image",
+        src: "./images/chann3l/chann3l-artists.png",
+        alt: "CHANN3L Artists",
+      },
+      {
+        name: "chann3l-writings",
+        type: "image",
+        src: "./images/chann3l/chann3l-writings.png",
+        alt: "CHANN3L Writings",
+      },
+    ],
+    firstColumnText: [
+      {
+        text: "It was a pleasure to build a platform for",
+      },
+      {
+        link: {
+          text: "CHANN3L",
+          target: "https://chann3l.world/",
+          externalLink: true,
+          noSpaceAfter: true,
+        },
+      },
+      {
+        text: ", Khalila Douze’s multidisciplinary home for her",
+      },
+      {
+        link: {
+          text: "tarot reading practice",
+          target: "chann3l-readings",
+          noSpaceAfter: true,
+        },
+      },
+      {
+        text: ",",
+      },
+      {
+        link: {
+          text: "musical artist management",
+          target: "chann3l-artists",
+          noSpaceAfter: true,
+        },
+      },
+      {
+        text: ", and",
+      },
+      {
+        link: {
+          text: "journalism",
+          target: "chann3l-writings",
+        },
+      },
+      {
+        text: "for various media outlets.",
+      },
+    ],
+    secondColumnText: [
+      {
+        mobileBreak: true,
+      },
+      {
+        text: "We wanted to make a watery and wavy experience to match the way she fluidly combines these three pursuits, and I explored the practice of paper marbling to create an environment to match.",
+      },
+    ],
+  },
+  {
     key: "noname-book-club",
     title: "Noname Book Club",
     role: "Design & Development @ Noname Book Club",
