@@ -107,10 +107,14 @@ export default function Slideshow(props) {
           >
             { props.collection.slides.map((slide, i) =>
               <Slide key={i}>
-                { slide.type === 'image' &&
-                  <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
-                }
-                { slide.type === 'video' &&
+                {slide.type === "image" && (
+                  <SlideImage
+                    src={slide.src}
+                    alt={slide.alt || "Jenn Scheer – Portfolio Image"}
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
+                )}
+                {slide.type === "video" && (
                   <div>
                     <SlideVideo
                       as="video"
@@ -120,7 +124,11 @@ export default function Slideshow(props) {
                       playsInline
                       loop
                     />
-                    <SlideImagePlaceholder src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+                    <SlideImagePlaceholder
+                      src={slide.src}
+                      alt={slide.alt || "Jenn Scheer – Portfolio Image"}
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
                   </div>
                 }
               </Slide>
