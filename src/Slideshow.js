@@ -1,23 +1,29 @@
-import React, { useState } from 'react';
-import MediaQuery from 'react-responsive';
-import Hammer from 'react-hammerjs';
+import React, { useState } from "react";
+import MediaQuery from "react-responsive";
+import Hammer from "react-hammerjs";
 
-import SlideshowArrowIcon from './SlideshowArrowIcon';
-import SlideshowText from './SlideshowText';
+import SlideshowArrowIcon from "./SlideshowArrowIcon";
+import SlideshowText from "./SlideshowText";
 
 import {
-  Section, SectionColumn,
+  Section,
+  SectionColumn,
   NextPreviousSectionColumn,
-} from './SectionStyles';
+} from "./SectionStyles";
 
 import {
-  Slides, Slide, SlideImage,
-  SlideVideo, SlideImagePlaceholder,
-  SlideList, SlideListItem,
-  PreviousButton, NextButton,
-} from './SlideshowStyles';
+  Slides,
+  Slide,
+  SlideImage,
+  SlideVideo,
+  SlideImagePlaceholder,
+  SlideList,
+  SlideListItem,
+  PreviousButton,
+  NextButton,
+} from "./SlideshowStyles";
 
-import { columnBreakpoint } from './Styles';
+import { columnBreakpoint } from "./Styles";
 
 export default function Slideshow(props) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -40,7 +46,7 @@ export default function Slideshow(props) {
    */
   // useEffect(() => {
   //   console.log("Endcap transition running");
-    // setTimeout(setEndcapAnimation(false), 300);
+  // setTimeout(setEndcapAnimation(false), 300);
   // }, [endcapAnimation]);
 
   function goToSlide(i) {
@@ -77,9 +83,11 @@ export default function Slideshow(props) {
   // I wanted to use react-swipeable, but neither the hooks nor the
   // component were letting me swipe more than once, or at all
   function handleSwipe(e) {
-    if (e.direction === 2) { // Swiping left
+    if (e.direction === 2) {
+      // Swiping left
       goToNextSlide();
-    } else if (e.direction === 4) { // Swiping right
+    } else if (e.direction === 4) {
+      // Swiping right
       goToPreviousSlide();
     }
   }
@@ -87,7 +95,7 @@ export default function Slideshow(props) {
   return (
     <React.Fragment>
       <Section header id={props.collection.key}>
-        <h2>{ props.collection.title }</h2>
+        <h2>{props.collection.title}</h2>
       </Section>
 
       <Section slideshow>
@@ -96,21 +104,25 @@ export default function Slideshow(props) {
           options={{
             recognizers: {
               swipe: {
-                velocity: .1,
-              }
-            }
+                velocity: 0.1,
+              },
+            },
           }}
         >
           <Slides
-            style={{left: currentSlide * -100 + "%"}}
+            style={{ left: currentSlide * -100 + "%" }}
             endcapAnimation={endcapAnimation}
           >
-            { props.collection.slides.map((slide, i) =>
+            {props.collection.slides.map((slide, i) => (
               <Slide key={i}>
-                { slide.type === 'image' &&
-                  <SlideImage src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
-                }
-                { slide.type === 'video' &&
+                {slide.type === "image" && (
+                  <SlideImage
+                    src={slide.src}
+                    alt={slide.alt || "Jenn Scheer – Portfolio Image"}
+                    loading={i === 0 ? "eager" : "lazy"}
+                  />
+                )}
+                {slide.type === "video" && (
                   <div>
                     <SlideVideo
                       as="video"
@@ -120,11 +132,15 @@ export default function Slideshow(props) {
                       playsInline
                       loop
                     />
-                    <SlideImagePlaceholder src={slide.src} alt={slide.alt || "Jenn Scheer – Portfolio Image"} />
+                    <SlideImagePlaceholder
+                      src={slide.src}
+                      alt={slide.alt || "Jenn Scheer – Portfolio Image"}
+                      loading={i === 0 ? "eager" : "lazy"}
+                    />
                   </div>
-                }
+                )}
               </Slide>
-            )}
+            ))}
           </Slides>
         </Hammer>
       </Section>
@@ -132,13 +148,13 @@ export default function Slideshow(props) {
       <Section>
         <SectionColumn>
           <SlideList>
-            { props.collection.slides.map((slide, i) =>
-            <SlideListItem
-              key={i}
-              selected={i === currentSlide}
-              onClick={() => goToSlide(i)}
-            />
-            )}
+            {props.collection.slides.map((slide, i) => (
+              <SlideListItem
+                key={i}
+                selected={i === currentSlide}
+                onClick={() => goToSlide(i)}
+              />
+            ))}
           </SlideList>
         </SectionColumn>
         <NextPreviousSectionColumn text>
@@ -155,7 +171,7 @@ export default function Slideshow(props) {
 
       <Section text>
         <SectionColumn text>
-          <p>{ props.collection.role }</p>
+          <p>{props.collection.role}</p>
           <MediaQuery minWidth={columnBreakpoint}>
             <SlideshowText
               showFirstColumn
