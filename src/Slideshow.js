@@ -119,7 +119,6 @@ export default function Slideshow(props) {
                   <SlideImage
                     src={slide.src}
                     alt={slide.alt || "Jenn Scheer – Portfolio Image"}
-                    loading={i === 0 ? "eager" : "lazy"}
                   />
                 )}
                 {slide.type === "video" && (
@@ -135,7 +134,6 @@ export default function Slideshow(props) {
                     <SlideImagePlaceholder
                       src={slide.src}
                       alt={slide.alt || "Jenn Scheer – Portfolio Image"}
-                      loading={i === 0 ? "eager" : "lazy"}
                     />
                   </div>
                 )}
