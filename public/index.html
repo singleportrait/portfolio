@@ -13,15 +13,29 @@
     <base href="/" target="_blank" />
     <link rel="canonical" href="https://www.jennscheer.com/" />
 
-    <meta name="description" content="Jenn Scheer is a freelance product strategist, designer & front-end developer working in New York." itemprop="description" />
-    <meta name="keywords" content="Jenn Scheer, product strategy, product design, graphic design, web design, full stack development, front end development, javascript, html, css, ruby on rails, designer, freelance, coding, agile development, new york city" itemprop="keywords" />
+    <meta
+      name="description"
+      content="Jenn Scheer is a freelance product strategist, designer & front-end developer working in New York."
+      itemprop="description"
+    />
+    <meta
+      name="keywords"
+      content="Jenn Scheer, product strategy, product design, graphic design, web design, full stack development, front end development, javascript, html, css, ruby on rails, designer, freelance, coding, agile development, new york city"
+      itemprop="keywords"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/jennscheer-180.png" />
 
     <!-- FB -->
-    <meta property="og:url" content="https://www.jennscheer.com/">
-    <meta property="og:title" content="Jenn Scheer">
-    <meta property="og:image" content="https://www.jennscheer.com/images/facebook-share-image.png">
-    <meta property="og:description" content="Jenn Scheer is a freelance product strategist, designer & front-end developer working in New York.">
+    <meta property="og:url" content="https://www.jennscheer.com/" />
+    <meta property="og:title" content="Jenn Scheer" />
+    <meta
+      property="og:image"
+      content="https://www.jennscheer.com/images/facebook-share-image.png"
+    />
+    <meta
+      property="og:description"
+      content="Jenn Scheer is a freelance product strategist, designer & front-end developer working in New York."
+    />
     <meta property="og:type" content="website" />
 
     <!-- Twitter -->
@@ -32,17 +46,31 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this site.</noscript>
-    <div id="root"></div>
+    <div id="app"></div>
 
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      (function (i, s, o, g, r, a, m) {
+        i["GoogleAnalyticsObject"] = r;
+        (i[r] =
+          i[r] ||
+          function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }),
+          (i[r].l = 1 * new Date());
+        (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m);
+      })(
+        window,
+        document,
+        "script",
+        "https://www.google-analytics.com/analytics.js",
+        "ga"
+      );
 
-      ga('create', 'UA-2588891-7', 'auto');
-      ga('send', 'pageview');
-
+      ga("create", "UA-2588891-7", "auto");
+      ga("send", "pageview");
     </script>
   </body>
 </html>
