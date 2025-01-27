@@ -8,17 +8,6 @@ You can install everything with:
 yarn install
 ```
 
-If you run into errors with `fsevents` (I ran into this issue when trying to install on a new M1 laptop), it may have to do with your current Node version. A quick fix is to go back to an earlier Node that we know it works with (using `nvm` Node version manager):
-
-```
-nvm install 16.17.0
-npm install -g yarn
-nvm use 16.17.0
-yarn install
-```
-
-After this, it worked.
-
 ## Compressing Images & Videos
 
 Use [PNG Quant](https://pngquant.org/) ([installation instructions here](https://pngquant.org/install.html)) to compress the slideshow images. This should be done for all images to keep load times down.
