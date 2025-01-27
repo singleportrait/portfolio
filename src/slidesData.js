@@ -47,19 +47,19 @@ export const SLIDES = [
       {
         name: "tables-for-two-homepage",
         type: "image",
-        src: "./images/tables-for-two/tables-for-two-homepage.webp",
+        src: "./images/tables-for-two/tables-for-two-homepage.png",
         alt: "Tables for Two Homepage",
       },
       {
         name: "tables-for-two-restaurant",
         type: "image",
-        src: "./images/tables-for-two/tables-for-two-restaurant.webp",
+        src: "./images/tables-for-two/tables-for-two-restaurant.png",
         alt: "Tables for Two Restaurant",
       },
       {
         name: "tables-for-two-list",
         type: "image",
-        src: "./images/tables-for-two/tables-for-two-list.webp",
+        src: "./images/tables-for-two/tables-for-two-list.png",
         alt: "Tables for Two List View",
       },
       {
