@@ -4,8 +4,14 @@ Welcome to my portfolio.
 
 You can install everything with:
 
-```
+```sh
 yarn install
+```
+
+And run the site locally with:
+
+```sh
+yarn start
 ```
 
 ## Compressing Images & Videos
