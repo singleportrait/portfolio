@@ -4,13 +4,29 @@ Welcome to my portfolio.
 
 You can install everything with:
 
-```
+```sh
 yarn install
+```
+
+And run the site locally with:
+
+```sh
+yarn start
 ```
 
 ## Compressing Images & Videos
 
-Use [PNG Quant](https://pngquant.org/) ([installation instructions here](https://pngquant.org/install.html)) to compress the slideshow images. This should be done for all images to keep load times down.
+Use `cwebp` to compress the slideshow images to `.webp` format. The `webp` library can be installed with Homebrew: `brew install webp`.
+
+Then run:
+
+```sh
+cwebp -q 100 input-image.jpg -o output-image-q-100.webp
+```
+
+Usually this can cut down an image to half or even more the size of the original PNG.
+
+Earlier instructions: Use [PNG Quant](https://pngquant.org/) ([installation instructions here](https://pngquant.org/install.html)) to compress the slideshow images. This should be done for all images to keep load times down.
 
 ```sh
 pngquant <oldfile.png>
@@ -35,9 +51,21 @@ There is a shell script in this directory that you can run from the same folder 
 ffmpeg -i <input-filename.mp4> -vcodec h264 -strict -2 -an -movflags faststart <output-filename.mp4>
 ```
 
+If you want to try cropping the video from the command line, you can use ffmpeg to do so! Sample:
+
+```sh
+# w = output width
+# h = output height
+# x = start x point for crop (e.g. 0,0)
+# y = start y point for crop
+ffmpeg -i input.mp4 -vcodec h264 -strict -2 -an -movflags faststart -vf "crop=w:h:x:y" output.mp4
+
+ffmpeg -i input.mp4 -vcodec h264 -strict -2 -an -movflags faststart -vf "crop=2508:1580:0:0" output.mp4
+```
+
 ## Hosting Videos
 
-Currently hosting videos on my AWS S3 bucket for fastest loading. Could ideally set these as variable constants that I can then pull from within the templates. Or, as values in the slides data object.
+Currently hosting videos on my AWS S3 bucket for fastest loading (hosted in personal account). Could ideally set these as variable constants that I can then pull from within the templates. Or, as values in the slides data object.
 
 ## Deploying
 

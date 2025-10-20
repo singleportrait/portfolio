@@ -145,6 +145,106 @@ export const SLIDES = [
     ],
   },
   {
+    key: "pattern-language",
+    title: "Pattern Language Index",
+    role: "Design & Development",
+    slides: [
+      {
+        name: "pattern-language-overview",
+        type: "video", // video or image
+        src: "./images/pattern-language/pattern-language-overview.webp",
+        videoSrc:
+          "https://js-portfolio-2017.s3.amazonaws.com/pattern-language-overview-video-compressed.mp4",
+        alt: "Pattern Language Index App",
+      },
+      {
+        name: "pattern-language-index",
+        type: "image",
+        src: "./images/pattern-language/pattern-language-index.webp",
+        alt: "Pattern Language Index Homepage",
+      },
+      {
+        name: "pattern-language-index-list",
+        type: "image",
+        src: "./images/pattern-language/pattern-language-index-list.webp",
+        alt: "Pattern Language Index Sections",
+      },
+      {
+        name: "pattern-language-guide",
+        type: "image",
+        src: "./images/pattern-language/pattern-language-guide.webp",
+        alt: "Pattern Language Index Guide",
+      },
+      {
+        name: "pattern-language-pattern",
+        type: "image",
+        src: "./images/pattern-language/pattern-language-pattern.webp",
+        alt: "Pattern Language Index Pattern",
+      },
+      {
+        name: "pattern-language-menus",
+        type: "image",
+        src: "./images/pattern-language/pattern-language-menus.webp",
+        alt: "Pattern Language Index Menus",
+      },
+    ],
+    firstColumnText: [
+      {
+        link: {
+          text: "Pattern Language Index",
+          target: "https://patternlanguageindex.com/",
+          externalLink: true,
+        },
+      },
+      {
+        text: "contains an overview of all 253 patterns from Christopher Alexander and team’s seminal 1977 book A Pattern Language. The book contains a series of architectural patterns, from the regional scale down to the width of door trim, that their team observed made spaces feel alive and timeless. Each pattern isn’t complete unless it’s in a network of patterns larger and smaller than it, and the intertextual links between patterns long felt like they’d work beautifully on the web. ",
+      },
+    ],
+    secondColumnText: [
+      { mobileBreak: true },
+      { text: "The site contains an" },
+      {
+        link: {
+          text: "index of all patterns",
+          target: "pattern-language-index",
+        },
+      },
+      { text: "in their" },
+      {
+        link: {
+          text: "respective categories",
+          target: "pattern-language-index-list",
+          noSpaceAfter: true,
+        },
+      },
+      { text: ", a" },
+      {
+        link: {
+          text: "how-to guide",
+          target: "pattern-language-guide",
+          noSpaceAfter: true,
+        },
+      },
+      { text: ", the" },
+      {
+        link: {
+          text: "patterns",
+          target: "pattern-language-pattern",
+        },
+      },
+      { text: "and their details, and some" },
+      {
+        link: {
+          text: "easy tools",
+          target: "pattern-language-menus",
+        },
+      },
+      {
+        text: "to jump between them. I love the interconnected web, and how approachable the book makes it feel to implement each of them. I can envision making the site more interactive, allowing one to collect favorite patterns and create a plan for using them in one’s own space.",
+      },
+    ],
+  },
+  {
     key: "lucia-kempkes",
     title: "Lucia Kempkes",
     role: "Design & Development",
